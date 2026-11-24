@@ -60,7 +60,11 @@
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
 
-      <!-- CTA Button -->
+      <!-- Net Solutions Style Nav Pill CTA -->
+      <a href="#start-conversation" class="nav-pill-cta">
+        Start a Conversation <span class="nav-arrow">↗</span>
+      </a>
+
       <!-- Mobile Hamburger -->
       <button id="menu-btn" class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
@@ -76,24 +80,33 @@
         <li><a href="portfolio.html" class="mobile-link">Portfolio</a></li>
         <li><a href="blog.html" class="mobile-link">Blog</a></li>
         <li><a href="contact.html" class="mobile-link">Contact</a></li>
-        </ul>
+      </ul>
+      <div class="mobile-cta" style="padding-top:14px;">
+        <a href="#start-conversation" class="btn btn-primary btn-royal-pill" style="width:100%; justify-content:center;">
+          Start a Conversation <span class="arrow-diag">↗</span>
+        </a>
+      </div>
     </div>
   </header>
 
   <main>
 
     <!-- ═══════════════════════════════════════════════════
-         HERO SECTION
+         HERO SECTION (NET SOLUTIONS INSPIRED)
     ═══════════════════════════════════════════════════ -->
     <section id="hero" class="hero-section" aria-label="Hero">
+
+      <!-- Full-bleed Luminous 3D Cyber-Wave & Neural Motion Engine -->
+      <div class="hero-canvas-wrap" aria-hidden="true">
+        <canvas id="hero-motion-canvas"></canvas>
+        <div class="hero-canvas-vignette"></div>
+      </div>
 
       <!-- Floating geometric background shapes -->
       <div class="hero-bg-shapes" aria-hidden="true">
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
         <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-        <div class="shape shape-5"></div>
       </div>
 
       <!-- Particle dots canvas -->
@@ -108,15 +121,15 @@
 
       <div class="hero-container">
 
-        <!-- Left: Text Content -->
+        <!-- Left: Text Content (AcuraTech Original Brand Copy) -->
         <div class="hero-content">
-          <div class="hero-badge">
-            <span class="badge-dot"></span>
+          <div class="hero-eyebrow-ns">
+            <span class="eyebrow-pulse"></span>
             Trusted by 200+ Global Businesses
           </div>
 
           <h1 class="hero-headline">
-            <span class="typing-text">Transforming Businesses Through Technology</span>
+            Transforming Businesses Through <span class="gradient-text">Technology</span>
           </h1>
 
           <p class="hero-subtitle">
@@ -124,207 +137,83 @@
           </p>
 
           <div class="hero-actions">
-            <a href="contact.html" class="btn btn-primary btn-lg">
-              <i class="fa-solid fa-rocket" aria-hidden="true"></i>
-              Start Your Project
+            <a href="#start-conversation" class="btn btn-primary btn-lg btn-royal-pill">
+              Start Your Project <span class="arrow-diag">↗</span>
             </a>
-            <a href="portfolio.html" class="btn btn-outline btn-lg">
-              <i class="fa-solid fa-play-circle" aria-hidden="true"></i>
-              View Our Work
+            <a href="portfolio.html" class="btn btn-outline btn-lg btn-ghost-pill">
+              <i class="fa-solid fa-circle-play" style="margin-right:6px; font-size:0.95rem;"></i> View Our Work
             </a>
+          </div>
+
+          <!-- Enterprise Validation Strip (Net Solutions Inspired) -->
+          <div class="hero-enterprise-trust">
+            <span class="trust-title">Validated By Global Industry Standards:</span>
+            <div class="trust-badges-row">
+              <span class="trust-badge-item"><i class="fa-solid fa-star text-gold"></i> <strong>Clutch</strong> 4.9/5</span>
+              <span class="trust-badge-sep">•</span>
+              <span class="trust-badge-item"><i class="fa-solid fa-award text-blue"></i> <strong>Upwork</strong> Top Rated Plus</span>
+              <span class="trust-badge-sep">•</span>
+              <span class="trust-badge-item"><i class="fa-solid fa-certificate text-purple"></i> <strong>ISO</strong> 9001:2015</span>
+              <span class="trust-badge-sep">•</span>
+              <span class="trust-badge-item"><i class="fa-brands fa-aws text-orange"></i> <strong>AWS</strong> Partner</span>
+              <span class="trust-badge-sep">•</span>
+              <span class="trust-badge-item"><i class="fa-solid fa-building-columns text-cyan"></i> <strong>STPI</strong> Mohali</span>
+            </div>
           </div>
         </div>
 
-        <!-- Right: SVG Tech Illustration -->
-        <div class="hero-illustration" aria-hidden="true">
-          <svg viewBox="0 25 520 415" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
-            <defs>
-              <linearGradient id="laptopGrad" x1="0" y1="0" x2="520" y2="480" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#0A66C2" stop-opacity="0.9"/>
-                <stop offset="100%" stop-color="#6C3FE8" stop-opacity="0.9"/>
-              </linearGradient>
-              <linearGradient id="screenGrad" x1="80" y1="60" x2="440" y2="300" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#0F0F23"/>
-                <stop offset="100%" stop-color="#1a1a40"/>
-              </linearGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-
-            <!-- Laptop body -->
-            <rect x="60" y="60" width="400" height="260" rx="12" fill="url(#screenGrad)" stroke="#0A66C2" stroke-width="2"/>
-            <!-- Screen bezel -->
-            <rect x="75" y="75" width="370" height="230" rx="6" fill="#070718"/>
-            <!-- Laptop base -->
-            <path d="M20 330 Q260 345 500 330 L490 355 Q260 370 30 355 Z" fill="#1e1e3f" stroke="#0A66C2" stroke-width="1.5"/>
-            <!-- Trackpad -->
-            <rect x="215" y="338" width="90" height="10" rx="5" fill="#0A66C2" opacity="0.5"/>
-
-            <!-- Code lines on screen -->
-            <text x="90" y="100" fill="#6C3FE8" font-family="monospace" font-size="11">function</text>
-            <text x="150" y="100" fill="#FF6B35" font-family="monospace" font-size="11"> transform</text>
-            <text x="225" y="100" fill="white" font-family="monospace" font-size="11">(business) {</text>
-
-            <text x="100" y="118" fill="#64748B" font-family="monospace" font-size="10">// Innovate with cutting-edge tech</text>
-            <text x="100" y="136" fill="#0A66C2" font-family="monospace" font-size="11">const</text>
-            <text x="130" y="136" fill="white" font-family="monospace" font-size="11"> solution =</text>
-            <text x="195" y="136" fill="#6C3FE8" font-family="monospace" font-size="11"> await</text>
-            <text x="230" y="136" fill="#FF6B35" font-family="monospace" font-size="11"> acuraTech</text>
-            <text x="295" y="136" fill="white" font-family="monospace" font-size="11">.build({</text>
-
-            <text x="115" y="154" fill="#64748B" font-family="monospace" font-size="11">tech:</text>
-            <text x="150" y="154" fill="#22d3ee" font-family="monospace" font-size="11"> ['React','Node','AWS'],</text>
-            <text x="115" y="172" fill="#64748B" font-family="monospace" font-size="11">quality:</text>
-            <text x="165" y="172" fill="#22d3ee" font-family="monospace" font-size="11"> 'enterprise',</text>
-            <text x="115" y="190" fill="#64748B" font-family="monospace" font-size="11">delivery:</text>
-            <text x="168" y="190" fill="#22d3ee" font-family="monospace" font-size="11"> 'on-time',</text>
-            <text x="115" y="208" fill="#64748B" font-family="monospace" font-size="11">support:</text>
-            <text x="163" y="208" fill="#22d3ee" font-family="monospace" font-size="11"> '24/7'</text>
-            <text x="100" y="226" fill="white" font-family="monospace" font-size="11">});</text>
-
-            <text x="100" y="248" fill="#0A66C2" font-family="monospace" font-size="11">return</text>
-            <text x="135" y="248" fill="white" font-family="monospace" font-size="11"> solution.</text>
-            <text x="195" y="248" fill="#FF6B35" font-family="monospace" font-size="11">deploy</text>
-            <text x="237" y="248" fill="white" font-family="monospace" font-size="11">();</text>
-            <text x="90" y="270" fill="white" font-family="monospace" font-size="11">}</text>
-
-            <!-- Blinking cursor -->
-            <rect x="90" y="280" width="2" height="12" fill="#0A66C2" class="cursor-blink"/>
-
-            <!-- Floating node network -->
-            <!-- Nodes -->
-            <circle cx="430" cy="50" r="18" fill="url(#laptopGrad)" filter="url(#glow)" opacity="0.9"/>
-            <circle cx="490" cy="130" r="12" fill="#6C3FE8" filter="url(#glow)" opacity="0.85"/>
-            <circle cx="460" cy="210" r="20" fill="#0A66C2" filter="url(#glow)" opacity="0.9"/>
-            <circle cx="30" cy="150" r="14" fill="#6C3FE8" filter="url(#glow)" opacity="0.85"/>
-            <circle cx="20" cy="250" r="10" fill="#FF6B35" filter="url(#glow)" opacity="0.8"/>
-            <circle cx="70" cy="380" r="16" fill="#0A66C2" filter="url(#glow)" opacity="0.85"/>
-            <circle cx="200" cy="420" r="12" fill="#6C3FE8" filter="url(#glow)" opacity="0.8"/>
-            <circle cx="350" cy="410" r="14" fill="#FF6B35" filter="url(#glow)" opacity="0.85"/>
-            <circle cx="460" cy="370" r="10" fill="#0A66C2" filter="url(#glow)" opacity="0.8"/>
-
-            <!-- Connecting lines -->
-            <line x1="430" y1="50" x2="490" y2="130" stroke="#0A66C2" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
-            <line x1="490" y1="130" x2="460" y2="210" stroke="#6C3FE8" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
-            <line x1="460" y1="210" x2="460" y2="370" stroke="#0A66C2" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-            <line x1="30" y1="150" x2="20" y2="250" stroke="#6C3FE8" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
-            <line x1="20" y1="250" x2="70" y2="380" stroke="#FF6B35" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
-            <line x1="70" y1="380" x2="200" y2="420" stroke="#0A66C2" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
-            <line x1="200" y1="420" x2="350" y2="410" stroke="#6C3FE8" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
-            <line x1="350" y1="410" x2="460" y2="370" stroke="#FF6B35" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
-
-            <!-- Icon labels in nodes -->
-            <text x="430" y="55" text-anchor="middle" fill="white" font-size="12">⚡</text>
-            <text x="490" y="134" text-anchor="middle" fill="white" font-size="10">☁</text>
-            <text x="460" y="215" text-anchor="middle" fill="white" font-size="13">🔒</text>
-            <text x="30" y="155" text-anchor="middle" fill="white" font-size="10">📱</text>
-            <text x="20" y="254" text-anchor="middle" fill="white" font-size="8">AI</text>
-            <text x="70" y="385" text-anchor="middle" fill="white" font-size="11">🌐</text>
-            <text x="200" y="424" text-anchor="middle" fill="white" font-size="10">⚙</text>
-            <text x="350" y="414" text-anchor="middle" fill="white" font-size="10">📊</text>
-            <text x="460" y="374" text-anchor="middle" fill="white" font-size="8">UI</text>
-          </svg>
-        </div>
+        <!-- Right: Clean Open Visual Stage for 3D Motion Canvas -->
+        <div class="hero-right-spacer" aria-hidden="true"></div>
 
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════
-         STATS STRIP
+         CLIENT & ENTERPRISE TRUST STRIP (NET SOLUTIONS STYLE)
     ═══════════════════════════════════════════════════ -->
-    <section id="stats" class="stats-section" aria-label="Company statistics">
-      <div class="stats-container">
-
-        <div class="stat-card animate-on-scroll">
-          <div class="stat-icon">
-            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-              <circle cx="20" cy="20" r="18" fill="#0A66C2" opacity="0.15"/>
-              <path d="M12 28 L12 18 L20 10 L28 18 L28 28 Z" stroke="#0A66C2" stroke-width="2" fill="none"/>
-              <rect x="16" y="20" width="8" height="8" fill="#0A66C2" opacity="0.6"/>
-            </svg>
+    <section class="client-trust-strip" aria-label="Enterprise partners and accreditations">
+      <div class="container">
+        <p class="trust-strip-label">TRUSTED ENGINEERING PARTNER TO 200+ GLOBAL BUSINESSES &amp; ENTERPRISES</p>
+        <div class="trust-logos-row">
+          <div class="trust-partner-item">
+            <span class="t-badge-bold"><i class="fa-solid fa-star text-gold"></i> Clutch</span>
+            <span class="t-badge-sub">4.9 / 5 Rating (54+ Reviews)</span>
           </div>
-          <div class="stat-info">
-            <div class="stat-value">
-              <span class="stat-number" data-target="500">0</span>
-              <span class="stat-suffix">+</span>
-            </div>
-            <p class="stat-label">Projects Delivered</p>
+          <div class="trust-partner-item">
+            <span class="t-badge-bold"><i class="fa-solid fa-award text-blue"></i> Upwork</span>
+            <span class="t-badge-sub">Top Rated Plus (100% Success)</span>
           </div>
-        </div>
-
-        <div class="stat-card animate-on-scroll">
-          <div class="stat-icon">
-            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-              <circle cx="20" cy="20" r="18" fill="#6C3FE8" opacity="0.15"/>
-              <circle cx="15" cy="16" r="5" stroke="#6C3FE8" stroke-width="2" fill="none"/>
-              <circle cx="25" cy="16" r="5" stroke="#6C3FE8" stroke-width="2" fill="none"/>
-              <path d="M8 32 Q8 24 15 24 Q20 28 25 24 Q32 24 32 32" stroke="#6C3FE8" stroke-width="2" fill="none"/>
-            </svg>
+          <div class="trust-partner-item">
+            <span class="t-badge-bold"><i class="fa-brands fa-aws text-orange"></i> AWS Partner</span>
+            <span class="t-badge-sub">Cloud Architecture Network</span>
           </div>
-          <div class="stat-info">
-            <div class="stat-value">
-              <span class="stat-number" data-target="200">0</span>
-              <span class="stat-suffix">+</span>
-            </div>
-            <p class="stat-label">Happy Clients</p>
+          <div class="trust-partner-item">
+            <span class="t-badge-bold"><i class="fa-solid fa-certificate text-purple"></i> ISO 9001:2015</span>
+            <span class="t-badge-sub">Certified Quality Delivery</span>
+          </div>
+          <div class="trust-partner-item">
+            <span class="t-badge-bold"><i class="fa-solid fa-building-columns text-cyan"></i> STPI Mohali</span>
+            <span class="t-badge-sub">Govt. of India Tech Incubator</span>
           </div>
         </div>
-
-        <div class="stat-card animate-on-scroll">
-          <div class="stat-icon">
-            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-              <circle cx="20" cy="20" r="18" fill="#FF6B35" opacity="0.15"/>
-              <circle cx="20" cy="20" r="10" stroke="#FF6B35" stroke-width="2" fill="none"/>
-              <ellipse cx="20" cy="20" rx="5" ry="10" stroke="#FF6B35" stroke-width="1.5" fill="none"/>
-              <line x1="10" y1="20" x2="30" y2="20" stroke="#FF6B35" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <div class="stat-info">
-            <div class="stat-value">
-              <span class="stat-number" data-target="15">0</span>
-              <span class="stat-suffix">+</span>
-            </div>
-            <p class="stat-label">Countries Served</p>
-          </div>
-        </div>
-
-        <div class="stat-card animate-on-scroll">
-          <div class="stat-icon">
-            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-              <circle cx="20" cy="20" r="18" fill="#22d3ee" opacity="0.15"/>
-              <circle cx="20" cy="20" r="10" stroke="#22d3ee" stroke-width="2" fill="none"/>
-              <polyline points="20,12 20,20 26,24" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="stat-info">
-            <div class="stat-value">
-              <span class="stat-number" data-target="10">0</span>
-              <span class="stat-suffix">+ Yrs</span>
-            </div>
-            <p class="stat-label">Industry Experience</p>
-          </div>
-        </div>
-
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════
-         SERVICES SECTION
+         SERVICES SECTION (NET SOLUTIONS INSPIRED)
     ═══════════════════════════════════════════════════ -->
     <section id="services" class="services-section section-padding" aria-labelledby="services-heading">
       <div class="container">
 
         <div class="section-header animate-on-scroll">
-          <span class="section-eyebrow">What We Do</span>
-          <h2 id="services-heading" class="section-title">Our <span class="gradient-text">Expert Services</span></h2>
-          <p class="section-subtitle">From concept to deployment — we deliver end-to-end technology solutions that drive real business outcomes and competitive advantage.</p>
+          <span class="section-eyebrow">WHAT WE BUILD</span>
+          <h2 id="services-heading" class="section-title">Enterprise Engineering Practices, <span class="gradient-text">One Proven Model</span></h2>
+          <p class="section-subtitle">We design digital products, engineer resilient cloud platforms, and compound their performance over time. Tailored for scalable enterprise growth.</p>
         </div>
 
         <div class="services-grid stagger-children animate-on-scroll">
 
-          <!-- Service 1: Software Development -->
+          <!-- Service 1: Software & Platform Engineering -->
           <article class="service-card animate-on-scroll" aria-label="Software Development service">
             <div class="service-icon">
               <svg width="38" height="38" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -335,9 +224,15 @@
                 <rect x="8" y="40" width="32" height="4" rx="1" fill="#0A66C2" opacity="0.3"/>
               </svg>
             </div>
-            <h3 class="service-title">Software Development</h3>
-            <p class="service-desc">Custom enterprise-grade software built with modern architectures. We specialize in scalable backends, microservices, APIs, and full-stack web platforms tailored to your business needs.</p>
-            <a href="services.html#software" class="service-link">Learn More <span aria-hidden="true">→</span></a>
+            <h3 class="service-title">Software &amp; Platform Engineering</h3>
+            <p class="service-desc">Custom enterprise-grade software built with modern architectures. Scalable backends, event-driven microservices, high-throughput APIs, and mission-critical web platforms.</p>
+            <div class="service-tags">
+              <span class="service-tag-pill">React 19</span>
+              <span class="service-tag-pill">Node.js / Go</span>
+              <span class="service-tag-pill">Microservices</span>
+              <span class="service-tag-pill">PostgreSQL</span>
+            </div>
+            <a href="services.html#software" class="service-link">Learn More <span aria-hidden="true">↗</span></a>
           </article>
 
           <!-- Service 2: Mobile App Development -->
@@ -350,12 +245,18 @@
                 <line x1="21" y1="7" x2="27" y2="7" stroke="#6C3FE8" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3 class="service-title">Mobile App Development</h3>
-            <p class="service-desc">Native iOS & Android apps and cross-platform solutions using Flutter and React Native. We craft intuitive mobile experiences that your users will love and return to.</p>
-            <a href="services.html#mobile" class="service-link">Learn More <span aria-hidden="true">→</span></a>
+            <h3 class="service-title">Mobile App Engineering</h3>
+            <p class="service-desc">Native iOS &amp; Android and fluid cross-platform apps using Flutter and React Native. Powering high-impact apps like Sentinel DUO with over 1.5M+ active installs.</p>
+            <div class="service-tags">
+              <span class="service-tag-pill">iOS &amp; Swift</span>
+              <span class="service-tag-pill">Android Kotlin</span>
+              <span class="service-tag-pill">Flutter</span>
+              <span class="service-tag-pill">React Native</span>
+            </div>
+            <a href="services.html#mobile" class="service-link">Learn More <span aria-hidden="true">↗</span></a>
           </article>
 
-          <!-- Service 3: Cloud Solutions -->
+          <!-- Service 3: Cloud & DevOps Infrastructure -->
           <article class="service-card animate-on-scroll" aria-label="Cloud Solutions service">
             <div class="service-icon">
               <svg width="38" height="38" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -366,13 +267,19 @@
                 <line x1="16" y1="40" x2="32" y2="40" stroke="#FF6B35" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3 class="service-title">Cloud Solutions</h3>
-            <p class="service-desc">AWS, Azure, and GCP migration, architecture, and optimization. We build resilient, auto-scaling cloud infrastructures that cut costs and maximize uptime for your business.</p>
-            <a href="services.html#cloud" class="service-link">Learn More <span aria-hidden="true">→</span></a>
+            <h3 class="service-title">Cloud &amp; DevOps Infrastructure</h3>
+            <p class="service-desc">AWS Partner cloud migration, Kubernetes orchestration, CI/CD automation, and multi-region resilience delivering 99.99% SLA uptime while slashing infrastructure overhead.</p>
+            <div class="service-tags">
+              <span class="service-tag-pill">AWS Partner</span>
+              <span class="service-tag-pill">Docker &amp; K8s</span>
+              <span class="service-tag-pill">Terraform</span>
+              <span class="service-tag-pill">CI/CD Pipeline</span>
+            </div>
+            <a href="services.html#cloud" class="service-link">Learn More <span aria-hidden="true">↗</span></a>
           </article>
 
-          <!-- Service 4: IT Consulting -->
-          <article class="service-card animate-on-scroll" aria-label="IT Consulting service">
+          <!-- Service 4: Data & AI Engineering -->
+          <article class="service-card animate-on-scroll" aria-label="Data and AI Engineering service">
             <div class="service-icon">
               <svg width="38" height="38" viewBox="0 0 48 48" fill="none" aria-hidden="true">
                 <circle cx="24" cy="16" r="8" fill="#22d3ee" opacity="0.1" stroke="#22d3ee" stroke-width="1.5"/>
@@ -382,9 +289,15 @@
                 <circle cx="38" cy="6" r="3" fill="#0A66C2" opacity="0.6"/>
               </svg>
             </div>
-            <h3 class="service-title">IT Consulting</h3>
-            <p class="service-desc">Strategic technology advisory from seasoned CTOs and architects. We analyze your current systems, define a technology roadmap, and guide digital transformation that aligns with your goals.</p>
-            <a href="services.html#consulting" class="service-link">Learn More <span aria-hidden="true">→</span></a>
+            <h3 class="service-title">Data &amp; AI Engineering</h3>
+            <p class="service-desc">Applied machine learning, GenAI pipelines, custom LLM integration, and real-time streaming analytics. We turn raw business data into autonomous decision-making engines.</p>
+            <div class="service-tags">
+              <span class="service-tag-pill">Applied ML</span>
+              <span class="service-tag-pill">GenAI &amp; LLMs</span>
+              <span class="service-tag-pill">Python &amp; PyTorch</span>
+              <span class="service-tag-pill">Vector DBs</span>
+            </div>
+            <a href="services.html#ai" class="service-link">Learn More <span aria-hidden="true">↗</span></a>
           </article>
 
           <!-- Service 5: Cybersecurity -->
@@ -395,12 +308,18 @@
                 <path d="M18 24 L22 28 L30 20" stroke="#6C3FE8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3 class="service-title">Cybersecurity</h3>
-            <p class="service-desc">End-to-end security assessments, penetration testing, SOC implementation, and compliance management. We protect your digital assets and ensure regulatory compliance across all frameworks.</p>
-            <a href="services.html#security" class="service-link">Learn More <span aria-hidden="true">→</span></a>
+            <h3 class="service-title">Enterprise Cybersecurity</h3>
+            <p class="service-desc">End-to-end security audits, penetration testing, Zero-Trust network implementation, and compliance management conforming to ISO 9001:2015 and SOC 2 security standards.</p>
+            <div class="service-tags">
+              <span class="service-tag-pill">Zero-Trust</span>
+              <span class="service-tag-pill">Pen Testing</span>
+              <span class="service-tag-pill">ISO 9001:2015</span>
+              <span class="service-tag-pill">Data Encryption</span>
+            </div>
+            <a href="services.html#security" class="service-link">Learn More <span aria-hidden="true">↗</span></a>
           </article>
 
-          <!-- Service 6: UI/UX Design -->
+          <!-- Service 6: UI/UX & Experience Design -->
           <article class="service-card animate-on-scroll" aria-label="UI/UX Design service">
             <div class="service-icon">
               <svg width="38" height="38" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -413,15 +332,21 @@
                 <rect x="20" y="38" width="8" height="4" rx="1" fill="#0A66C2" opacity="0.3"/>
               </svg>
             </div>
-            <h3 class="service-title">UI/UX Design</h3>
-            <p class="service-desc">User-centered design that converts. We craft intuitive interfaces backed by user research, wireframing, prototyping, and iterative testing — building products people genuinely want to use.</p>
-            <a href="services.html#design" class="service-link">Learn More <span aria-hidden="true">→</span></a>
+            <h3 class="service-title">UI/UX &amp; Experience Design</h3>
+            <p class="service-desc">Human-centric interfaces engineered to maximize engagement and conversion. Design systems, interactive prototypes, user journey mapping, and usability testing.</p>
+            <div class="service-tags">
+              <span class="service-tag-pill">Design Systems</span>
+              <span class="service-tag-pill">Figma</span>
+              <span class="service-tag-pill">User Research</span>
+              <span class="service-tag-pill">Conversion UX</span>
+            </div>
+            <a href="services.html#design" class="service-link">Learn More <span aria-hidden="true">↗</span></a>
           </article>
 
         </div>
 
         <div class="services-cta animate-on-scroll">
-          <a href="services.html" class="btn btn-secondary">Explore All Services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <a href="services.html" class="btn btn-secondary">Explore All Capabilities <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
 
       </div>
@@ -613,292 +538,230 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════
-         HOW WE WORK
+         THE OPERATING MODEL (NET SOLUTIONS 3-PILLAR FRAMEWORK)
     ═══════════════════════════════════════════════════ -->
-        <!-- ═══════════════════════════════════════════════════
-         HOW WE WORK (CONNECTED PROCESS PIPELINE)
-    ═══════════════════════════════════════════════════ -->
-    <section id="process" class="process-section" aria-labelledby="process-heading">
+    <section id="operating-model" class="operating-section section-padding" aria-labelledby="model-heading">
       <div class="container">
-
         <div class="section-header text-center animate-on-scroll">
-          <span class="section-eyebrow">Our Methodology</span>
-          <h2 id="process-heading" class="section-title">How We <span class="gradient-text">Build Success</span></h2>
-          <p class="section-subtitle">A proven 4-step agile delivery pipeline refined over 10+ years and 500+ projects. Transparent, collaborative, and results-driven from day one.</p>
+          <span class="section-eyebrow">THE OPERATING MODEL</span>
+          <h2 id="model-heading" class="section-title">Engineered to <span class="gradient-text">Build, Evolve &amp; Compound</span></h2>
+          <p class="section-subtitle">A proven delivery framework refined over 10+ years and 500+ production releases. Transparent, agile, and architected for compounding business value.</p>
         </div>
 
-        <div class="process-pipeline animate-on-scroll">
-
-          <!-- Step 1 -->
-          <div class="process-card step-card-1">
-            <div class="step-header">
-              <span class="step-badge badge-blue">01</span>
-              <div class="step-icon icon-blue">
-                <i class="fa-solid fa-magnifying-glass-chart"></i>
-              </div>
-            </div>
-            <h3 class="step-title">Discovery & Strategy</h3>
-            <p class="step-desc">Deep-dive into business goals, user personas, and technical feasibility. We define scope, architecture constraints, and roadmap milestones.</p>
-            <div class="step-deliverables">
-              <span class="deliverable-tag"><i class="fa-solid fa-check"></i> Scope & SRS</span>
-              <span class="deliverable-tag"><i class="fa-solid fa-check"></i> Tech Stack</span>
+        <div class="operating-grid animate-on-scroll">
+          <!-- Pillar 1: Build -->
+          <div class="operating-card op-build">
+            <div class="op-phase-pill">01 • ZERO TO PRODUCTION</div>
+            <div class="op-icon-wrap"><i class="fa-solid fa-cube"></i></div>
+            <h3 class="op-title">Build</h3>
+            <p class="op-desc">New digital products and platforms engineered from zero to launch with your team alongside ours. User research, architecture design, rapid sprints, and automated CI/CD deployment.</p>
+            <div class="op-highlights">
+              <span class="op-tag"><i class="fa-solid fa-check"></i> Cloud-Native Architecture</span>
+              <span class="op-tag"><i class="fa-solid fa-check"></i> High-Velocity MVP Sprints</span>
+              <span class="op-tag"><i class="fa-solid fa-check"></i> Automated QA &amp; Security</span>
             </div>
           </div>
 
-          <!-- Step 2 -->
-          <div class="process-card step-card-2">
-            <div class="step-header">
-              <span class="step-badge badge-purple">02</span>
-              <div class="step-icon icon-purple">
-                <i class="fa-solid fa-bezier-curve"></i>
-              </div>
-            </div>
-            <h3 class="step-title">UI/UX & Architecture</h3>
-            <p class="step-desc">Interactive wireframes, user journeys, design systems, and database schema. Stakeholders review and approve prototypes before writing code.</p>
-            <div class="step-deliverables">
-              <span class="deliverable-tag"><i class="fa-solid fa-check"></i> Figma Design</span>
-              <span class="deliverable-tag"><i class="fa-solid fa-check"></i> API Blueprint</span>
+          <!-- Pillar 2: Evolve -->
+          <div class="operating-card op-evolve">
+            <div class="op-phase-pill">02 • LEGACY MODERNIZATION</div>
+            <div class="op-icon-wrap"><i class="fa-solid fa-arrows-rotate"></i></div>
+            <h3 class="op-title">Evolve</h3>
+            <p class="op-desc">Existing software systems moved out of technical debt in calibrated, incremental stages — modernizing monolithic backends and databases while serving active users with zero downtime.</p>
+            <div class="op-highlights">
+              <span class="op-tag"><i class="fa-solid fa-check"></i> Monolith to Microservices</span>
+              <span class="op-tag"><i class="fa-solid fa-check"></i> Cloud &amp; DB Migration</span>
+              <span class="op-tag"><i class="fa-solid fa-check"></i> Zero-Downtime Cutover</span>
             </div>
           </div>
 
-          <!-- Step 3 -->
-          <div class="process-card step-card-3">
-            <div class="step-header">
-              <span class="step-badge badge-orange">03</span>
-              <div class="step-icon icon-orange">
-                <i class="fa-solid fa-code"></i>
-              </div>
-            </div>
-            <h3 class="step-title">Agile Development</h3>
-            <p class="step-desc">2-week agile sprint cycles with continuous integration, automated test suites, code reviews, and bi-weekly client demo sessions.</p>
-            <div class="step-deliverables">
-              <span class="deliverable-tag"><i class="fa-solid fa-check"></i> Sprint Builds</span>
-              <span class="deliverable-tag"><i class="fa-solid fa-check"></i> Automated QA</span>
+          <!-- Pillar 3: Compound -->
+          <div class="operating-card op-compound">
+            <div class="op-phase-pill">03 • SCALE &amp; AI INTEGRATION</div>
+            <div class="op-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+            <h3 class="op-title">Compound</h3>
+            <p class="op-desc">Continuous post-launch engineering, telemetry observability, and data/AI integrations that make your platform measurably faster, more secure, and higher-converting every quarter it runs.</p>
+            <div class="op-highlights">
+              <span class="op-tag"><i class="fa-solid fa-check"></i> 99.99% Production SLA</span>
+              <span class="op-tag"><i class="fa-solid fa-check"></i> Applied AI &amp; Automation</span>
+              <span class="op-tag"><i class="fa-solid fa-check"></i> Quarterly Value Sprints</span>
             </div>
           </div>
-
-          <!-- Step 4 -->
-          <div class="process-card step-card-4">
-            <div class="step-header">
-              <span class="step-badge badge-emerald">04</span>
-              <div class="step-icon icon-emerald">
-                <i class="fa-solid fa-rocket"></i>
-              </div>
-            </div>
-            <h3 class="step-title">Deploy & Scale</h3>
-            <p class="step-desc">Production release, cloud infrastructure scaling, load testing, team handoff, and 24/7 SLA-backed performance monitoring.</p>
-            <div class="step-deliverables">
-              <span class="deliverable-tag"><i class="fa-solid fa-check"></i> Cloud Launch</span>
-              <span class="deliverable-tag"><i class="fa-solid fa-check"></i> 24/7 SLA Support</span>
-            </div>
-          </div>
-
         </div>
-
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════
-         FEATURED PORTFOLIO
+         PROVEN OUTCOMES (NET SOLUTIONS SIGNATURE DARK STATS)
+    ═══════════════════════════════════════════════════ -->
+    <section id="outcomes" class="outcomes-section" aria-label="Proven production outcomes">
+      <div class="container">
+        <div class="outcomes-header animate-on-scroll">
+          <span class="section-eyebrow">PROVEN OUTCOMES</span>
+          <h2 class="section-title text-white">Numbers from Production, <span class="gradient-text">not Projections</span></h2>
+          <p class="section-subtitle">Real metrics generated by platforms we've architected, launched, and scaled globally.</p>
+        </div>
+
+        <div class="outcomes-grid animate-on-scroll">
+          <div class="outcome-card">
+            <div class="outcome-num">1.5M+</div>
+            <div class="outcome-label">Active Protected Users</div>
+            <p class="outcome-sub">On flagship Sentinel DUO multi-sensor security app across 15+ countries.</p>
+          </div>
+
+          <div class="outcome-card">
+            <div class="outcome-num">500+</div>
+            <div class="outcome-label">Enterprise Deliveries</div>
+            <p class="outcome-sub">Shipped on-time and within budget for startups to Fortune 500 enterprises.</p>
+          </div>
+
+          <div class="outcome-card">
+            <div class="outcome-num">99.99%</div>
+            <div class="outcome-label">Production SLA Uptime</div>
+            <p class="outcome-sub">Maintained across high-concurrency cloud and distributed API backends.</p>
+          </div>
+
+          <div class="outcome-card">
+            <div class="outcome-num">10+ Yrs</div>
+            <div class="outcome-label">Engineering Discipline</div>
+            <p class="outcome-sub">Incubated at STPI Mohali with certified ISO 9001:2015 quality frameworks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FEATURED WORK (NET SOLUTIONS FEATURED CASE STUDY)
     ═══════════════════════════════════════════════════ -->
     <section id="portfolio" class="portfolio-section section-padding" aria-labelledby="portfolio-heading">
       <div class="container">
 
         <div class="section-header animate-on-scroll">
-          <span class="section-eyebrow">Our Work</span>
-          <h2 id="portfolio-heading" class="section-title">Featured <span class="gradient-text">Projects</span></h2>
-          <p class="section-subtitle">A snapshot of transformative digital products we've shipped. Each project represents a unique challenge solved with creativity and engineering excellence.</p>
+          <span class="section-eyebrow">FEATURED WORK</span>
+          <h2 id="portfolio-heading" class="section-title">Case Studies in <span class="gradient-text">Production Scale</span></h2>
+          <p class="section-subtitle">From custom security ecosystems to high-transaction platforms — explore how our engineering creates compounding competitive advantage.</p>
         </div>
 
+        <!-- Hero Spotlight Case Study: Sentinel DUO -->
+        <div class="spotlight-case-study animate-on-scroll">
+          <div class="spotlight-visual">
+            <div class="phone-mockup-frame">
+              <div class="phone-speaker"></div>
+              <div class="phone-screen-content">
+                <div class="app-telemetry-header">
+                  <span class="app-status-badge"><span class="pulse-dot"></span> SYSTEM ARMED</span>
+                  <span class="app-version">v4.2 PRO</span>
+                </div>
+                <div class="radar-scan-box">
+                  <div class="radar-circle rc-1"></div>
+                  <div class="radar-circle rc-2"></div>
+                  <div class="radar-sweep"></div>
+                  <div class="radar-core"><i class="fa-solid fa-shield-halved"></i></div>
+                </div>
+                <div class="sensor-matrix">
+                  <div class="sensor-cell active"><i class="fa-solid fa-arrows-up-down-left-right"></i> Motion: Calibrated</div>
+                  <div class="sensor-cell active"><i class="fa-solid fa-plug"></i> Charger: Monitored</div>
+                  <div class="sensor-cell active"><i class="fa-solid fa-sim-card"></i> SIM Lock: Engaged</div>
+                  <div class="sensor-cell active"><i class="fa-solid fa-hand"></i> Proximity: Active</div>
+                </div>
+                <div class="telemetry-live-pill">
+                  <span>False Positives: <strong>0.00%</strong></span>
+                  <span>Response: <strong>&lt; 50ms</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="spotlight-content">
+            <div class="spotlight-eyebrow">FLAGSHIP PRODUCT • MOBILE &amp; AI SECURITY</div>
+            <h3 class="spotlight-title">Sentinel DUO™: Multi-Sensor Anti-Theft AI System with 1.5M+ Downloads</h3>
+            <p class="spotlight-desc">
+              AcuraTech Global architected, built, and scaled Sentinel DUO from inception. By combining hardware sensor telemetry (accelerometer, gyroscope, light, and power state) with an on-device machine learning model, we eliminated false alarms and delivered instant multi-tier threat deterrence.
+            </p>
+            <div class="spotlight-stats-row">
+              <div class="sp-stat">
+                <span class="sp-stat-val">1.5M+</span>
+                <span class="sp-stat-label">Global Installs</span>
+              </div>
+              <div class="sp-stat">
+                <span class="sp-stat-val">4.6★</span>
+                <span class="sp-stat-label">Store Rating (50k+ Reviews)</span>
+              </div>
+              <div class="sp-stat">
+                <span class="sp-stat-val">Zero</span>
+                <span class="sp-stat-label">False Triggers</span>
+              </div>
+            </div>
+            <div class="spotlight-tech-tags">
+              <span class="sp-tag">Flutter &amp; Dart</span>
+              <span class="sp-tag">Android NDK &amp; Swift</span>
+              <span class="sp-tag">Edge ML Sensor Fusion</span>
+              <span class="sp-tag">AWS Cloud Sync</span>
+            </div>
+            <div class="spotlight-action">
+              <a href="portfolio.html" class="btn btn-primary btn-lg">
+                Explore Full Case Study <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 Secondary Grid Cards -->
         <div class="portfolio-grid animate-on-scroll">
-
-          <!-- Portfolio 1: Sentinel DUO Anti-Theft App -->
-          <article class="portfolio-card animate-on-scroll" data-category="web" aria-label="Sentinel DUO Anti-Theft App project">
+          <!-- Card 1: FinTech Wealth Platform -->
+          <article class="portfolio-card animate-on-scroll" data-category="web">
             <div class="portfolio-visual">
-              <svg viewBox="0 0 360 220" fill="none" aria-hidden="true" class="portfolio-svg">
-                <rect width="360" height="220" rx="8" fill="url(#eduGrad)"/>
-                <defs>
-                  <linearGradient id="eduGrad" x1="0" y1="0" x2="360" y2="220" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#0F0F23"/>
-                    <stop offset="100%" stop-color="#1a1a40"/>
-                  </linearGradient>
-                </defs>
-                <!-- Browser chrome -->
-                <rect x="20" y="20" width="320" height="180" rx="8" fill="#1E293B"/>
-                <circle cx="36" cy="36" r="5" fill="#FF5F57"/>
-                <circle cx="52" cy="36" r="5" fill="#FEBC2E"/>
-                <circle cx="68" cy="36" r="5" fill="#28C840"/>
-                <rect x="85" y="29" width="195" height="14" rx="7" fill="#0F0F23"/>
-                <!-- Dashboard content -->
-                <rect x="30" y="52" width="80" height="140" rx="4" fill="#0F0F23"/>
-                <rect x="36" y="62" width="68" height="8" rx="2" fill="#0A66C2" opacity="0.6"/>
-                <rect x="36" y="78" width="52" height="6" rx="2" fill="#64748B" opacity="0.5"/>
-                <rect x="36" y="90" width="58" height="6" rx="2" fill="#64748B" opacity="0.4"/>
-                <rect x="36" y="102" width="44" height="6" rx="2" fill="#64748B" opacity="0.3"/>
-                <rect x="36" y="130" width="68" height="30" rx="4" fill="#0A66C2" opacity="0.2"/>
-                <!-- Main content -->
-                <rect x="120" y="52" width="210" height="140" rx="4" fill="#0F0F23" opacity="0.5"/>
-                <rect x="130" y="62" width="100" height="8" rx="2" fill="white" opacity="0.8"/>
-                <rect x="130" y="78" width="190" height="4" rx="2" fill="#64748B" opacity="0.4"/>
-                <rect x="130" y="88" width="170" height="4" rx="2" fill="#64748B" opacity="0.3"/>
-                <!-- Progress bars -->
-                <rect x="130" y="106" width="190" height="6" rx="3" fill="#1E293B"/>
-                <rect x="130" y="106" width="140" height="6" rx="3" fill="#0A66C2"/>
-                <rect x="130" y="118" width="190" height="6" rx="3" fill="#1E293B"/>
-                <rect x="130" y="118" width="100" height="6" rx="3" fill="#6C3FE8"/>
-                <rect x="130" y="130" width="190" height="6" rx="3" fill="#1E293B"/>
-                <rect x="130" y="130" width="160" height="6" rx="3" fill="#FF6B35"/>
-                <!-- Chart -->
-                <rect x="130" y="148" width="190" height="36" rx="4" fill="#1E293B" opacity="0.5"/>
-                <polyline points="140,176 155,165 170,170 185,155 200,160 215,148 230,153 245,142 260,150 275,138 290,143 305,135 318,140" stroke="#22d3ee" stroke-width="2" fill="none"/>
+              <svg viewBox="0 0 360 200" fill="none" class="portfolio-svg">
+                <rect width="360" height="200" rx="8" fill="#0d1326"/>
+                <rect x="20" y="20" width="320" height="160" rx="6" fill="#131c36" stroke="#2752ff" stroke-width="1.5"/>
+                <rect x="36" y="36" width="90" height="12" rx="4" fill="#2752ff"/>
+                <polyline points="40,140 100,100 160,120 220,70 280,85 320,45" stroke="#38bdf8" stroke-width="3" fill="none"/>
+                <circle cx="320" cy="45" r="5" fill="#38bdf8"/>
+                <rect x="36" y="60" width="70" height="8" rx="2" fill="#64748b"/>
+                <rect x="120" y="60" width="80" height="8" rx="2" fill="#64748b"/>
+                <rect x="220" y="60" width="60" height="8" rx="2" fill="#64748b"/>
               </svg>
-              <div class="portfolio-overlay">
-                <a href="portfolio.html" class="btn btn-outline btn-sm">View Case Study <span aria-hidden="true">→</span></a>
-              </div>
             </div>
             <div class="portfolio-info">
-              <h3 class="portfolio-title">Sentinel DUO – Mobile Security</h3>
-              <p class="portfolio-desc">A comprehensive e-learning ecosystem serving 50,000+ students with live classes, AI-powered progress tracking, and gamified learning paths.</p>
-              <div class="portfolio-tags" aria-label="Technologies used">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">AWS</span>
-                <span class="tag">MongoDB</span>
+              <div class="card-kicker">FINTECH &amp; WEALTH</div>
+              <h3 class="portfolio-title">AlphaWealth Enterprise Platform</h3>
+              <p class="portfolio-desc">Engineered an institutional-grade portfolio dashboard processing $45M+ in assets with automated compliance and sub-second trade execution.</p>
+              <div class="portfolio-tags">
+                <span class="tag">React 19</span>
+                <span class="tag">Node / Go</span>
+                <span class="tag">AWS DynamoDB</span>
+                <span class="tag">SOC 2 Compliant</span>
               </div>
             </div>
           </article>
 
-          <!-- Portfolio 2: FinTech Mobile App -->
-          <article class="portfolio-card animate-on-scroll" data-category="mobile" aria-label="FinTech Mobile App project">
+          <!-- Card 2: HealthTech Telehealth -->
+          <article class="portfolio-card animate-on-scroll" data-category="mobile">
             <div class="portfolio-visual">
-              <svg viewBox="0 0 360 220" fill="none" aria-hidden="true" class="portfolio-svg">
-                <rect width="360" height="220" rx="8" fill="url(#finGrad)"/>
-                <defs>
-                  <linearGradient id="finGrad" x1="0" y1="0" x2="360" y2="220" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#0F0F23"/>
-                    <stop offset="100%" stop-color="#1f0f35"/>
-                  </linearGradient>
-                </defs>
-                <!-- Phone mockup -->
-                <rect x="120" y="10" width="120" height="200" rx="16" fill="#1E293B" stroke="#6C3FE8" stroke-width="1.5"/>
-                <rect x="128" y="22" width="104" height="176" rx="10" fill="#0F0F23"/>
-                <!-- Status bar -->
-                <rect x="128" y="22" width="104" height="12" rx="10" fill="#6C3FE8" opacity="0.2"/>
-                <!-- Balance card -->
-                <rect x="134" y="40" width="92" height="50" rx="8" fill="url(#balGrad)"/>
-                <defs>
-                  <linearGradient id="balGrad" x1="134" y1="40" x2="226" y2="90" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#6C3FE8"/>
-                    <stop offset="100%" stop-color="#0A66C2"/>
-                  </linearGradient>
-                </defs>
-                <text x="180" y="62" text-anchor="middle" fill="white" font-family="Poppins" font-size="8" opacity="0.7">Total Balance</text>
-                <text x="180" y="78" text-anchor="middle" fill="white" font-family="Poppins" font-size="14" font-weight="700">$24,580.00</text>
-                <!-- Quick actions -->
-                <circle cx="150" cy="108" r="12" fill="#6C3FE8" opacity="0.2"/>
-                <circle cx="180" cy="108" r="12" fill="#0A66C2" opacity="0.2"/>
-                <circle cx="210" cy="108" r="12" fill="#FF6B35" opacity="0.2"/>
-                <text x="150" y="112" text-anchor="middle" fill="white" font-size="10">↑</text>
-                <text x="180" y="112" text-anchor="middle" fill="white" font-size="10">↓</text>
-                <text x="210" y="112" text-anchor="middle" fill="white" font-size="10">⇄</text>
-                <!-- Transactions -->
-                <rect x="134" y="130" width="92" height="10" rx="2" fill="#1E293B"/>
-                <rect x="134" y="130" width="60" height="10" rx="2" fill="#0A66C2" opacity="0.3"/>
-                <rect x="134" y="146" width="92" height="10" rx="2" fill="#1E293B"/>
-                <rect x="134" y="146" width="40" height="10" rx="2" fill="#6C3FE8" opacity="0.3"/>
-                <rect x="134" y="162" width="92" height="10" rx="2" fill="#1E293B"/>
-                <rect x="134" y="162" width="75" height="10" rx="2" fill="#FF6B35" opacity="0.3"/>
-                <!-- Chart line -->
-                <polyline points="134,195 148,188 162,191 176,182 190,185 204,175 218,178 226,170" stroke="#22d3ee" stroke-width="1.5" fill="none"/>
-                <!-- Decorative elements left/right -->
-                <circle cx="60" cy="80" r="30" fill="#6C3FE8" opacity="0.08"/>
-                <circle cx="300" cy="140" r="40" fill="#0A66C2" opacity="0.08"/>
-                <!-- Floating cards -->
-                <rect x="20" y="60" width="85" height="40" rx="8" fill="#1E293B" stroke="#6C3FE8" stroke-width="1" opacity="0.8"/>
-                <text x="62" y="80" text-anchor="middle" fill="#6C3FE8" font-family="Poppins" font-size="9" font-weight="600">↑ 12.4%</text>
-                <text x="62" y="92" text-anchor="middle" fill="#64748B" font-family="Inter" font-size="8">This Month</text>
-                <rect x="255" y="130" width="85" height="40" rx="8" fill="#1E293B" stroke="#0A66C2" stroke-width="1" opacity="0.8"/>
-                <text x="297" y="150" text-anchor="middle" fill="#22d3ee" font-family="Poppins" font-size="9" font-weight="600">AI Insights</text>
-                <text x="297" y="162" text-anchor="middle" fill="#64748B" font-family="Inter" font-size="8">3 alerts</text>
+              <svg viewBox="0 0 360 200" fill="none" class="portfolio-svg">
+                <rect width="360" height="200" rx="8" fill="#0d1326"/>
+                <rect x="20" y="20" width="320" height="160" rx="6" fill="#131c36" stroke="#8b5cf6" stroke-width="1.5"/>
+                <circle cx="80" cy="70" r="30" fill="rgba(139, 92, 246, 0.2)" stroke="#8b5cf6" stroke-width="1.5"/>
+                <path d="M70 70 L77 77 L92 62" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"/>
+                <rect x="130" y="50" width="160" height="14" rx="4" fill="#ffffff" opacity="0.9"/>
+                <rect x="130" y="74" width="120" height="8" rx="3" fill="#64748b"/>
+                <rect x="130" y="90" width="90" height="8" rx="3" fill="#64748b" opacity="0.6"/>
+                <rect x="36" y="120" width="288" height="35" rx="6" fill="#0b0f1d"/>
+                <rect x="50" y="132" width="100" height="10" rx="3" fill="#8b5cf6" opacity="0.8"/>
               </svg>
-              <div class="portfolio-overlay">
-                <a href="portfolio.html" class="btn btn-outline btn-sm">View Case Study <span aria-hidden="true">→</span></a>
-              </div>
             </div>
             <div class="portfolio-info">
-              <h3 class="portfolio-title">FinTech Mobile Banking App</h3>
-              <p class="portfolio-desc">A secure, feature-rich digital banking app with AI-powered spending insights, real-time transactions, and biometric authentication — 500K+ downloads.</p>
-              <div class="portfolio-tags" aria-label="Technologies used">
+              <div class="card-kicker">HEALTHTECH &amp; TELEHEALTH</div>
+              <h3 class="portfolio-title">MedPulse HIPAA Telehealth Suite</h3>
+              <p class="portfolio-desc">HIPAA-compliant telemedicine platform featuring encrypted WebRTC video consultation, EHR synchronization, and AI triage for 250,000+ patients.</p>
+              <div class="portfolio-tags">
                 <span class="tag">Flutter</span>
-                <span class="tag">Python</span>
-                <span class="tag">Azure</span>
-                <span class="tag">PostgreSQL</span>
+                <span class="tag">WebRTC</span>
+                <span class="tag">Python AI</span>
+                <span class="tag">HIPAA Certified</span>
               </div>
             </div>
           </article>
-
-          <!-- Portfolio 3: Healthcare Dashboard -->
-          <article class="portfolio-card animate-on-scroll" data-category="web" aria-label="Healthcare Dashboard project">
-            <div class="portfolio-visual">
-              <svg viewBox="0 0 360 220" fill="none" aria-hidden="true" class="portfolio-svg">
-                <rect width="360" height="220" rx="8" fill="url(#healthGrad)"/>
-                <defs>
-                  <linearGradient id="healthGrad" x1="0" y1="0" x2="360" y2="220" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#0F0F23"/>
-                    <stop offset="100%" stop-color="#0f231a"/>
-                  </linearGradient>
-                </defs>
-                <!-- Dashboard layout -->
-                <rect x="10" y="10" width="340" height="200" rx="8" fill="#1E293B"/>
-                <!-- Header -->
-                <rect x="10" y="10" width="340" height="28" rx="8" fill="#0F0F23"/>
-                <text x="30" y="29" fill="white" font-family="Poppins" font-size="10" font-weight="600">Healthcare Analytics Dashboard</text>
-                <!-- Patient vitals cards -->
-                <rect x="20" y="48" width="70" height="50" rx="6" fill="#0F0F23"/>
-                <text x="55" y="68" text-anchor="middle" fill="#22d3ee" font-family="Poppins" font-size="16" font-weight="700">98.6°</text>
-                <text x="55" y="82" text-anchor="middle" fill="#64748B" font-family="Inter" font-size="8">Body Temp</text>
-                <rect x="98" y="48" width="70" height="50" rx="6" fill="#0F0F23"/>
-                <text x="133" y="68" text-anchor="middle" fill="#FF6B35" font-family="Poppins" font-size="16" font-weight="700">72</text>
-                <text x="133" y="82" text-anchor="middle" fill="#64748B" font-family="Inter" font-size="8">Heart Rate</text>
-                <rect x="176" y="48" width="70" height="50" rx="6" fill="#0F0F23"/>
-                <text x="211" y="68" text-anchor="middle" fill="#6C3FE8" font-family="Poppins" font-size="14" font-weight="700">120/80</text>
-                <text x="211" y="82" text-anchor="middle" fill="#64748B" font-family="Inter" font-size="8">Blood Pressure</text>
-                <rect x="254" y="48" width="88" height="50" rx="6" fill="#0F0F23"/>
-                <text x="298" y="68" text-anchor="middle" fill="#28C840" font-family="Poppins" font-size="16" font-weight="700">98%</text>
-                <text x="298" y="82" text-anchor="middle" fill="#64748B" font-family="Inter" font-size="8">O₂ Saturation</text>
-                <!-- Heart rate chart -->
-                <rect x="20" y="108" width="200" height="90" rx="6" fill="#0F0F23"/>
-                <text x="30" y="122" fill="white" font-family="Poppins" font-size="9" font-weight="600">Heart Rate Monitor</text>
-                <polyline points="30,165 45,155 55,160 65,140 75,145 85,135 95,140 105,130 115,138 125,145 135,135 145,142 155,138 165,145 175,135 185,142 195,138 210,145" stroke="#FF6B35" stroke-width="2" fill="none"/>
-                <!-- Patient list -->
-                <rect x="228" y="108" width="124" height="90" rx="6" fill="#0F0F23"/>
-                <text x="238" y="122" fill="white" font-family="Poppins" font-size="9" font-weight="600">Recent Patients</text>
-                <rect x="234" y="130" width="112" height="16" rx="3" fill="#1E293B"/>
-                <circle cx="246" cy="138" r="5" fill="#22d3ee" opacity="0.5"/>
-                <text x="256" y="141" fill="white" font-family="Inter" font-size="8">John D. — Stable</text>
-                <rect x="234" y="150" width="112" height="16" rx="3" fill="#1E293B"/>
-                <circle cx="246" cy="158" r="5" fill="#FF6B35" opacity="0.5"/>
-                <text x="256" y="161" fill="white" font-family="Inter" font-size="8">Sarah M. — Monitoring</text>
-                <rect x="234" y="170" width="112" height="16" rx="3" fill="#1E293B"/>
-                <circle cx="246" cy="178" r="5" fill="#28C840" opacity="0.5"/>
-                <text x="256" y="181" fill="white" font-family="Inter" font-size="8">Tom B. — Recovered</text>
-              </svg>
-              <div class="portfolio-overlay">
-                <a href="portfolio.html" class="btn btn-outline btn-sm">View Case Study <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-            <div class="portfolio-info">
-              <h3 class="portfolio-title">Healthcare Analytics Dashboard</h3>
-              <p class="portfolio-desc">A HIPAA-compliant real-time patient monitoring system deployed across 12 hospitals, reducing response times by 40% and improving patient outcomes measurably.</p>
-              <div class="portfolio-tags" aria-label="Technologies used">
-                <span class="tag">React</span>
-                <span class="tag">TypeScript</span>
-                <span class="tag">Docker</span>
-                <span class="tag">AWS</span>
-              </div>
-            </div>
-          </article>
-
         </div>
 
         <div class="portfolio-cta animate-on-scroll">
@@ -1059,27 +922,64 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════
-         CTA STRIP
+         START A CONVERSATION (NET SOLUTIONS ROYAL BLUE BANNER)
     ═══════════════════════════════════════════════════ -->
-    <section id="cta-strip" class="cta-section section-padding" aria-label="Call to action">
-      <div class="cta-bg-shapes" aria-hidden="true">
-        <div class="cta-shape cta-shape-1"></div>
-        <div class="cta-shape cta-shape-2"></div>
-      </div>
+    <section id="start-conversation" class="conversation-banner-section" aria-label="Start a conversation">
+      <div id="cta-strip" style="position:relative; top:-20px;"></div>
       <div class="container">
-        <div class="cta-content animate-on-scroll">
-          <span class="section-eyebrow eyebrow-light">Ready to Build Something Great?</span>
-          <h2 class="cta-title">Turn Your Vision Into <span class="cta-highlight">Reality</span></h2>
-          <p class="cta-subtitle">Join 200+ businesses that trust AcuraTech Global to engineer their most critical digital products. Your first consultation is free — let's start the conversation.</p>
-          <div class="cta-actions">
-            <a href="contact.html" class="btn btn-white btn-lg">
-              <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-              Schedule Free Consultation
-            </a>
-            <a href="tel:+918427777775" class="btn btn-outline-white btn-lg">
-              <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              +91 842 777 7775
-            </a>
+        <div class="conversation-banner-wrap animate-on-scroll">
+          <div class="cb-left-col">
+            <span class="cb-eyebrow">START A CONVERSATION</span>
+            <h2 class="cb-title">Need a platform that grows with your business? <span class="cb-highlight">Let's talk.</span></h2>
+            <p class="cb-desc">
+              Whether you are engineering a new AI-native digital product from zero, modernizing legacy architecture, or scaling high-volume mobile systems — our team is ready to scope, architect, and deliver.
+            </p>
+            <div class="cb-tech-pills">
+              <span class="cb-pill">React 19</span>
+              <span class="cb-pill">Python &amp; AI</span>
+              <span class="cb-pill">Flutter</span>
+              <span class="cb-pill">AWS Partner</span>
+              <span class="cb-pill">Docker &amp; K8s</span>
+              <span class="cb-pill">Zero-Trust</span>
+            </div>
+            <div class="cb-contact-quick">
+              <a href="tel:+918427777775" class="cb-contact-link"><i class="fa-solid fa-phone"></i> +91 842 777 7775</a>
+              <span class="cb-sep">•</span>
+              <a href="mailto:info@acuratechglobal.com" class="cb-contact-link"><i class="fa-solid fa-envelope"></i> info@acuratechglobal.com</a>
+            </div>
+          </div>
+
+          <div class="cb-right-col">
+            <div class="cb-floating-card">
+              <h3 class="cb-form-title">Talk to Our Engineering Team</h3>
+              <p class="cb-form-sub">Guaranteed response within 24 hours under mutual NDA.</p>
+              <form class="cb-form" action="https://formsubmit.co/naveenbhobhrea4@gmail.com" method="POST">
+                <input type="hidden" name="_cc" value="info@acuratechglobal.com">
+                <input type="hidden" name="_subject" value="New Project Inquiry - AcuraTech Global">
+                <input type="hidden" name="_template" value="table">
+                <div class="cb-form-group">
+                  <label for="cb-name">Your Name</label>
+                  <input type="text" id="cb-name" placeholder="John Doe" required />
+                </div>
+                <div class="cb-form-group">
+                  <label for="cb-email">Work Email</label>
+                  <input type="email" id="cb-email" placeholder="john@company.com" required />
+                </div>
+                <div class="cb-form-group">
+                  <label for="cb-interest">What are you looking to build?</label>
+                  <select id="cb-interest">
+                    <option value="software">Custom Software &amp; Platform Engineering</option>
+                    <option value="mobile">Mobile App Development (iOS / Android)</option>
+                    <option value="ai">Data &amp; AI Engineering (ML / LLMs)</option>
+                    <option value="cloud">Cloud Migration &amp; DevOps</option>
+                    <option value="security">Enterprise Cybersecurity &amp; Audit</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn-cb-submit">
+                  Start Your Project <span>↗</span>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

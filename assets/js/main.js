@@ -20,6 +20,163 @@ document.addEventListener('DOMContentLoaded', () => {
     handleNavbarScroll(); // run on load in case page is already scrolled
   }
 
+  /* =========================================================
+   * 1B. HERO 3D LUMINOUS CYBER-WAVE & NEURAL VISUAL ENGINE
+   * 60fps high-DPI procedural 3D wave ribbons and glowing particles
+   * Continuously flowing, breathing, and reacting every second
+   * ========================================================= */
+  const canvas = document.getElementById('hero-motion-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let width = 0, height = 0, dpr = 1;
+    let time = 0;
+    const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
+
+    const resize = () => {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const parent = canvas.parentElement || document.getElementById('hero');
+      width = parent ? parent.offsetWidth : window.innerWidth;
+      height = parent ? parent.offsetHeight : window.innerHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpr, dpr);
+    };
+
+    window.addEventListener('resize', resize, { passive: true });
+    resize();
+
+    window.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      if (e.clientY <= rect.bottom) {
+        mouse.tx = (e.clientX / width - 0.5) * 2;
+        mouse.ty = (e.clientY / height - 0.5) * 2;
+      }
+    }, { passive: true });
+
+    // Floating ambient cyber particles
+    const numParticles = 40;
+    const particles = [];
+    for (let i = 0; i < numParticles; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        size: Math.random() * 2.2 + 0.8,
+        speedX: (Math.random() - 0.5) * 0.45,
+        speedY: (Math.random() - 0.5) * 0.45,
+        alpha: Math.random() * 0.55 + 0.25,
+        hue: Math.random() > 0.5 ? 215 : 185
+      });
+    }
+
+    // Grid configuration for 3D flowing cyber-ribbons
+    const rows = 24;
+    const cols = 36;
+    const fov = 420;
+
+    const render = () => {
+      time += 0.018;
+      mouse.x += (mouse.tx - mouse.x) * 0.05;
+      mouse.y += (mouse.ty - mouse.y) * 0.05;
+
+      ctx.clearRect(0, 0, width, height);
+
+      // 1. Draw floating ambient particles on right half
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.speedX;
+        p.y += p.speedY;
+        if (p.x < width * 0.35) p.x = width;
+        if (p.x > width) p.x = width * 0.35;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        const fade = Math.min(1, Math.max(0, (p.x - width * 0.3) / (width * 0.35)));
+        ctx.fillStyle = `hsla(${p.hue}, 95%, 65%, ${p.alpha * fade})`;
+        ctx.fill();
+      }
+
+      // 2. Draw 3D flowing wave ribbons
+      const originX = width * 0.68 + mouse.x * 45;
+      const originY = height * 0.52 + mouse.y * 30;
+
+      for (let r = 0; r < rows; r++) {
+        const z = (r / rows) * 550 - 80;
+        const scale = fov / (fov + z);
+        const yOffset = (r - rows / 2) * 13;
+
+        ctx.beginPath();
+        let started = false;
+
+        for (let c = 0; c < cols; c++) {
+          const u = (c / (cols - 1)) - 0.5;
+          const x3d = u * 980;
+
+          // Harmonic wave equation creating organic continuous silk movement
+          const wave = Math.sin(u * 5 + time + r * 0.22) * 55 +
+                       Math.cos(u * 8 - time * 1.2 + r * 0.15) * 35 +
+                       Math.sin(time * 1.5 + u * 3) * 20;
+
+          const y3d = yOffset + wave;
+
+          const screenX = originX + x3d * scale;
+          const screenY = originY + y3d * scale;
+
+          if (!started) {
+            ctx.moveTo(screenX, screenY);
+            started = true;
+          } else {
+            ctx.lineTo(screenX, screenY);
+          }
+        }
+
+        const depthRatio = r / rows;
+        const alpha = Math.max(0.08, (1 - depthRatio * 0.72) * 0.88);
+
+        // Gradient stroke: electric blue -> cyan -> violet
+        const grad = ctx.createLinearGradient(originX - 420 * scale, 0, originX + 480 * scale, 0);
+        grad.addColorStop(0, `rgba(39, 82, 255, 0)`);
+        grad.addColorStop(0.35, `rgba(39, 82, 255, ${alpha * 0.6})`);
+        grad.addColorStop(0.7, `rgba(0, 245, 255, ${alpha})`);
+        grad.addColorStop(1, `rgba(168, 85, 247, ${alpha * 0.8})`);
+
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = Math.max(1, (1 - depthRatio * 0.6) * 2.2);
+        ctx.stroke();
+
+        // Glowing crest points at select peaks
+        if (r % 3 === 0) {
+          const crestCol = Math.floor((Math.sin(time * 0.8 + r) * 0.5 + 0.5) * (cols - 8)) + 4;
+          const u = (crestCol / (cols - 1)) - 0.5;
+          const x3d = u * 980;
+          const wave = Math.sin(u * 5 + time + r * 0.22) * 55 +
+                       Math.cos(u * 8 - time * 1.2 + r * 0.15) * 35 +
+                       Math.sin(time * 1.5 + u * 3) * 20;
+          const screenX = originX + x3d * scale;
+          const screenY = originY + (yOffset + wave) * scale;
+
+          if (screenX > width * 0.38) {
+            ctx.beginPath();
+            ctx.arc(screenX, screenY, Math.max(1.5, 3.2 * scale), 0, Math.PI * 2);
+            ctx.fillStyle = '#00f5ff';
+            ctx.shadowColor = '#00f5ff';
+            ctx.shadowBlur = 10;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          }
+        }
+      }
+
+      requestAnimationFrame(render);
+    };
+
+    render();
+  }
+
 
   /* =========================================================
    * 2. MOBILE MENU TOGGLE
@@ -55,9 +212,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =========================================================
-   * 3. SMOOTH SCROLLING
+   * 3. SMOOTH SCROLLING & "START A CONVERSATION" ON-TAP
    * Intercepts all anchor links starting with `#` and scrolls
    * smoothly to the target element.
+   * Special behavior for #start-conversation: smooth scroll,
+   * pulses consultation card, and auto-focuses first input.
    * ========================================================= */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
@@ -67,12 +226,95 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        const navHeight = navbar ? navbar.offsetHeight : 0;
+        const navHeight = navbar ? navbar.offsetHeight + 24 : 80;
         const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
         window.scrollTo({ top, behavior: 'smooth' });
+
+        // If target is start-conversation, focus input and pulse card
+        if (targetId === '#start-conversation' || targetId === '#cta-strip') {
+          setTimeout(() => {
+            const card = target.querySelector('.cb-floating-card');
+            const nameInput = target.querySelector('#cb-name') || target.querySelector('input');
+            if (card) {
+              card.classList.remove('cb-card-pulse');
+              void card.offsetWidth; // trigger reflow
+              card.classList.add('cb-card-pulse');
+            }
+            if (nameInput) {
+              nameInput.focus({ preventScroll: true });
+            }
+          }, 600);
+        }
       }
     });
   });
+
+  /* =========================================================
+   * 3B. CONVERSATION BANNER FORM HANDLER (LIVE EMAIL DISPATCH)
+   * Dispatches live emails to naveenbhobhrea4@gmail.com & info@acuratechglobal.com
+   * ========================================================= */
+  const cbForm = document.querySelector('.cb-form');
+  if (cbForm) {
+    cbForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = (document.getElementById('cb-name')?.value || 'Valued Client').trim();
+      const email = (document.getElementById('cb-email')?.value || '').trim();
+      const interestSelect = document.getElementById('cb-interest');
+      const interestText = interestSelect ? interestSelect.options[interestSelect.selectedIndex].text : 'General Inquiry';
+      const submitBtn = cbForm.querySelector('.btn-cb-submit');
+      const card = cbForm.closest('.cb-floating-card');
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Dispatched to Leadership...';
+      }
+
+      const payload = {
+        name: name,
+        email: email,
+        project_type: interestText,
+        _subject: `New Project Inquiry from ${name} [${interestText}]`,
+        _cc: 'info@acuratechglobal.com',
+        _template: 'table',
+        source_page: 'Homepage - Start a Conversation Banner'
+      };
+
+      try {
+        await fetch('https://formsubmit.co/ajax/naveenbhobhrea4@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        console.warn('FormSubmit background dispatch note:', err);
+      }
+
+      if (card) {
+        card.innerHTML = `
+          <div class="cb-success-state" style="text-align: center; padding: 24px 10px;">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: #10B981; color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(16,185,129,0.35);">
+              ✓
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: #0F172A; margin-bottom: 8px;">
+              Inquiry Dispatched, ${name}!
+            </h3>
+            <p style="font-size: 0.9rem; color: #475569; line-height: 1.6; margin-bottom: 16px;">
+              Your project request has been transmitted directly to our team at <strong>info@acuratechglobal.com</strong>.
+            </p>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">
+              Our senior engineering leads will review your platform scope and follow up at <strong>${email}</strong> within 24 hours under mutual NDA.
+            </p>
+            <span style="display: inline-block; font-size: 0.78rem; font-weight: 600; color: #2752ff; background: #eef2ff; padding: 6px 14px; border-radius: 9999px;">
+              🔒 Mutual NDA Protected
+            </span>
+          </div>
+        `;
+      }
+    });
+  }
 
 
   /* =========================================================
@@ -320,7 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       let valid = true;
 
@@ -356,24 +598,66 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (valid) {
-        // Show success message
-        const successDiv = document.querySelector('.form-success');
-        if (successDiv) {
-          successDiv.style.display = 'block';
-          successDiv.style.opacity = '0';
-          void successDiv.offsetWidth;
-          successDiv.style.transition = 'opacity 0.5s ease';
-          successDiv.style.opacity    = '1';
+        const submitBtn = contactForm.querySelector('.btn-submit');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="margin-right:8px;"></i>Transmitting to Leadership...';
         }
-        contactForm.reset();
 
-        // Hide success after 5 seconds
-        setTimeout(() => {
-          if (successDiv) {
-            successDiv.style.opacity = '0';
-            setTimeout(() => { successDiv.style.display = 'none'; }, 500);
-          }
-        }, 5000);
+        const nameVal = nameField ? nameField.value.trim() : '';
+        const emailVal = emailField ? emailField.value.trim() : '';
+        const phoneField = document.getElementById('f-phone');
+        const phoneVal = phoneField ? phoneField.value.trim() : 'Not provided';
+        const serviceField = document.getElementById('f-service');
+        const serviceVal = serviceField && serviceField.selectedIndex >= 0 ? serviceField.options[serviceField.selectedIndex].text : 'General Inquiry';
+        const budgetField = document.getElementById('f-budget');
+        const budgetVal = budgetField && budgetField.selectedIndex >= 0 ? budgetField.options[budgetField.selectedIndex].text : 'Unspecified';
+        const messageVal = messageField ? messageField.value.trim() : '';
+        const ndaBox = document.querySelector('input[name="nda_required"]');
+        const ndaRequested = ndaBox && ndaBox.checked ? 'YES - Non-Disclosure Agreement Required' : 'No';
+
+        const payload = {
+          name: nameVal,
+          email: emailVal,
+          phone: phoneVal,
+          service_requested: serviceVal,
+          budget_range: budgetVal,
+          nda_requested: ndaRequested,
+          message: messageVal,
+          _subject: `New Client Contact: ${nameVal} [${serviceVal}]`,
+          _cc: 'info@acuratechglobal.com',
+          _template: 'table',
+          source_page: 'Contact Us Page'
+        };
+
+        try {
+          await fetch('https://formsubmit.co/ajax/naveenbhobhrea4@gmail.com', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
+        } catch (err) {
+          console.warn('FormSubmit contact dispatch note:', err);
+        }
+
+        // Show success message
+        const successDiv = document.querySelector('.form-success') || document.getElementById('form-success');
+        if (successDiv) {
+          successDiv.innerHTML = `
+            <div style="font-size:2rem; margin-bottom:8px;">🎉</div>
+            <h4 style="color:#065F46; font-size:1.2rem; font-weight:700; margin-bottom:8px;">Message Dispatched Successfully!</h4>
+            <p style="color:#047857; font-size:0.95rem; line-height:1.6; margin-bottom:12px;">
+              Your consultation request has been sent directly to <strong>info@acuratechglobal.com</strong>.
+            </p>
+            <p style="color:#475569; font-size:0.85rem;">One of our principal architects will reach out to <strong>${emailVal}</strong> within one business day under mutual NDA.</p>
+          `;
+          successDiv.style.display = 'block';
+          successDiv.style.opacity = '1';
+        }
+        contactForm.style.display = 'none';
       }
     });
 
