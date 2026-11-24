@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
         email: email,
         project_type: interestText,
         _subject: `New Project Inquiry from ${name} [${interestText}]`,
-        _cc: 'info@acuratechglobal.com',
+        _cc: 'info@acuratechglobal.com,bhavneet@acuratechglobal.com',
         _template: 'table',
         source_page: 'Homepage - Start a Conversation Banner'
       };
@@ -625,7 +625,7 @@ document.addEventListener('DOMContentLoaded', () => {
           nda_requested: ndaRequested,
           message: messageVal,
           _subject: `New Client Contact: ${nameVal} [${serviceVal}]`,
-          _cc: 'info@acuratechglobal.com',
+          _cc: 'info@acuratechglobal.com,bhavneet@acuratechglobal.com',
           _template: 'table',
           source_page: 'Contact Us Page'
         };
