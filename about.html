@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn about AcuraTech Global — our story, mission, vision, core values, and the team behind transforming businesses through technology." />
+  <meta property="og:title" content="About Us | AcuraTech Global" />
+  <meta property="og:description" content="Transforming Businesses Through Technology since 2014. Meet our team and discover our story." />
+  <title>About Us | AcuraTech Global</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* ── Page-level overrides & extras ── */
+
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, #0F0F23 0%, #1a1a3e 50%, #0A66C2 100%);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(108,63,232,0.3) 0%, transparent 60%);
+    }
+    .page-hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      color: #fff;
+      position: relative;
+    }
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.65);
+      position: relative;
+    }
+    .breadcrumb a { color: #0A66C2; text-decoration: none; }
+    .breadcrumb span { color: rgba(255,255,255,0.4); }
+
+    /* Story Section */
+    .story-section { padding: 100px 0; background: #F8FAFF; }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #0A66C2, #6C3FE8);
+    }
+    .timeline-item { position: relative; margin-bottom: 36px; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -26px; top: 6px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0A66C2, #6C3FE8);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 3px rgba(10,102,194,0.3);
+    }
+    .timeline-year {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #0A66C2;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .timeline-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #1E293B;
+      margin-bottom: 4px;
+    }
+    .timeline-desc { font-family: 'Inter', sans-serif; color: #64748B; font-size: 0.9rem; line-height: 1.6; }
+    .story-illustration { display: flex; align-items: center; justify-content: center; }
+
+    /* Vision & Mission */
+    .vision-mission { padding: 80px 0; background: #0F0F23; }
+    .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .vm-card {
+      border-radius: 20px;
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid transparent;
+      background-clip: padding-box;
+    }
+    .vm-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(135deg, #0A66C2, #6C3FE8);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+    }
+    .vm-icon { font-size: 2.5rem; margin-bottom: 20px; }
+    .vm-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .vm-card p { font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.7); line-height: 1.8; }
+
+    /* Core Values */
+    .core-values { padding: 100px 0; background: #F8FAFF; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .value-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(10,102,194,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-top: 4px solid transparent;
+    }
+    .value-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(10,102,194,0.15); border-top-color: #0A66C2; }
+    .value-icon {
+      width: 64px; height: 64px;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 20px;
+    }
+    .value-card h3 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.1rem; color: #1E293B; margin-bottom: 10px; }
+    .value-card p { font-family: 'Inter', sans-serif; color: #64748B; font-size: 0.9rem; line-height: 1.6; }
+
+    /* Team Section */
+    .team-section { padding: 100px 0; background: #fff; }
+    .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+    .team-card {
+      border-radius: 20px;
+      padding: 36px 24px;
+      text-align: center;
+      background: #F8FAFF;
+      border: 1px solid rgba(10,102,194,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .team-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(10,102,194,0.12); }
+    .avatar {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 0 auto 20px;
+      box-shadow: 0 8px 24px rgba(10,102,194,0.3);
+    }
+    .avatar-rs { background: linear-gradient(135deg, #0A66C2, #6C3FE8); }
+    .avatar-pp { background: linear-gradient(135deg, #6C3FE8, #FF6B35); }
+    .avatar-jw { background: linear-gradient(135deg, #FF6B35, #0A66C2); }
+    .avatar-sc { background: linear-gradient(135deg, #10B981, #0A66C2); }
+    .team-name { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.1rem; color: #1E293B; margin-bottom: 4px; }
+    .team-role { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #0A66C2; font-weight: 600; margin-bottom: 12px; }
+    .team-bio { font-family: 'Inter', sans-serif; color: #64748B; font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px; }
+    .team-linkedin { color: #0A66C2; font-size: 1.3rem; transition: color 0.2s; }
+    .team-linkedin:hover { color: #6C3FE8; }
+
+    /* Certifications */
+    .certifications { padding: 60px 0; background: #F8FAFF; }
+    .cert-pills { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+    .cert-pill {
+      display: flex; align-items: center; gap: 10px;
+      background: #fff;
+      border: 2px solid rgba(10,102,194,0.15);
+      border-radius: 50px;
+      padding: 12px 24px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #1E293B;
+      box-shadow: 0 2px 12px rgba(10,102,194,0.08);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .cert-pill:hover { border-color: #0A66C2; box-shadow: 0 4px 20px rgba(10,102,194,0.15); }
+    .cert-pill .cert-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0A66C2, #6C3FE8);
+      flex-shrink: 0;
+    }
+
+    /* Stats strip — reuse homepage style */
+    .stats-strip { padding: 60px 0; background: linear-gradient(135deg, #0F0F23, #1a1a3e); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+    .stat-number { font-family: 'Poppins', sans-serif; font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #0A66C2, #6C3FE8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat-label { font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.65); margin-top: 8px; }
+
+    /* Section header */
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(10,102,194,0.1);
+      color: #0A66C2;
+      border: 1px solid rgba(10,102,194,0.2);
+      border-radius: 50px;
+      padding: 6px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .section-header h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 16px;
+    }
+    .section-header h2.light { color: #fff; }
+    .section-header p { font-family: 'Inter', sans-serif; color: #64748B; max-width: 580px; margin: 0 auto; line-height: 1.8; }
+    .section-header p.light { color: rgba(255,255,255,0.65); }
+
+    /* Container */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Responsive */
+    @media (max-width: 1024px) { .team-grid { grid-template-columns: repeat(2, 1fr); } .values-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) { .story-grid, .vm-grid { grid-template-columns: 1fr; } .team-grid { grid-template-columns: 1fr 1fr; } .stats-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .team-grid, .values-grid, .stats-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- Page Loader -->
+<div id="page-loader" class="page-loader">
+  <div class="loader-spinner"></div>
+</div>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress" class="scroll-progress"></div>
+
+<!-- ═══ NAVBAR ═══ -->
+<header id="navbar" class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="AcuraTech Global – Home">
+        <img src="assets/images/logo.png" alt="AcuraTech Global" class="site-logo" width="165" height="44" />
+      </a>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="menu-btn" id="menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#portfolio">Portfolio</a>
+    <a href="contact.html">Contact</a>
+    </div>
+</header>
+
+<main>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>About Us</h1>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>About Us</span>
+      </nav>
+      <p style="color:rgba(255,255,255,0.7); font-family:'Inter',sans-serif; margin-top:16px; max-width:520px; margin-left:auto; margin-right:auto; line-height:1.8; position:relative;">
+        Transforming Businesses Through Technology since 2014. Meet the team driving innovation.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ OUR STORY ═══ -->
+  <section class="story-section animate-on-scroll">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Our Journey</div>
+        <h2>The AcuraTech Story</h2>
+        <p>From a small startup to a global technology partner — here's how we got here.</p>
+      </div>
+
+      <div class="story-grid">
+        <!-- Timeline -->
+        <div class="timeline">
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-year">2014</div>
+            <div class="timeline-title">Founded</div>
+            <div class="timeline-desc">AcuraTech Global was founded in India & Global with a vision to make enterprise-grade technology accessible to businesses of all sizes.</div>
+          </div>
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-year">2016</div>
+            <div class="timeline-title">First 100 Clients</div>
+            <div class="timeline-desc">Reached a landmark milestone of 100 happy clients across the US, Canada, and the UK, cementing our reputation for quality delivery.</div>
+          </div>
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-year">2018</div>
+            <div class="timeline-title">Global Expansion</div>
+            <div class="timeline-desc">Opened development centers in India and Europe, extending our talent pool and enabling round-the-clock delivery for global clients.</div>
+          </div>
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-title">500+ Projects Delivered</div>
+            <div class="timeline-desc">Surpassed 500 successfully delivered projects spanning web, mobile, cloud, and cybersecurity domains.</div>
+          </div>
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-title">ISO 9001 Certified</div>
+            <div class="timeline-desc">Achieved ISO 9001:2015 quality certification, reinforcing our commitment to process excellence and consistent delivery.</div>
+          </div>
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-title">AI Division Launched</div>
+            <div class="timeline-desc">Launched a dedicated Artificial Intelligence & ML division to help clients harness the power of generative AI and intelligent automation.</div>
+          </div>
+        </div>
+
+        <!-- Illustration -->
+        <div class="story-illustration animate-on-scroll">
+          <svg width="100%" viewBox="0 0 500 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Office team illustration">
+            <!-- Background -->
+            <rect width="500" height="480" rx="24" fill="#EEF4FF"/>
+            <!-- Desk -->
+            <rect x="60" y="300" width="380" height="12" rx="6" fill="#CBD5E1"/>
+            <rect x="80" y="312" width="12" height="80" rx="6" fill="#CBD5E1"/>
+            <rect x="408" y="312" width="12" height="80" rx="6" fill="#CBD5E1"/>
+            <!-- Monitor -->
+            <rect x="160" y="200" width="180" height="110" rx="8" fill="#1E293B"/>
+            <rect x="168" y="208" width="164" height="90" rx="4" fill="#0A66C2"/>
+            <!-- Screen content lines -->
+            <rect x="176" y="220" width="80" height="6" rx="3" fill="rgba(255,255,255,0.6)"/>
+            <rect x="176" y="234" width="120" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
+            <rect x="176" y="246" width="100" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
+            <rect x="176" y="260" width="60" height="20" rx="4" fill="#6C3FE8"/>
+            <rect x="244" y="260" width="60" height="20" rx="4" fill="rgba(255,255,255,0.15)"/>
+            <!-- Monitor stand -->
+            <rect x="240" y="310" width="20" height="20" rx="2" fill="#CBD5E1"/>
+            <rect x="210" y="328" width="80" height="8" rx="4" fill="#94A3B8"/>
+            <!-- Person 1 -->
+            <circle cx="130" cy="230" r="30" fill="#FECDD3"/>
+            <ellipse cx="130" cy="310" rx="35" ry="50" fill="#0A66C2"/>
+            <rect x="110" y="280" width="12" height="40" rx="6" fill="#FECDD3"/>
+            <rect x="138" y="280" width="12" height="40" rx="6" fill="#FECDD3"/>
+            <!-- Person 1 hair -->
+            <ellipse cx="130" cy="208" rx="22" ry="12" fill="#1E293B"/>
+            <!-- Person 2 -->
+            <circle cx="370" cy="230" r="30" fill="#FDE68A"/>
+            <ellipse cx="370" cy="310" rx="35" ry="50" fill="#6C3FE8"/>
+            <rect x="350" y="280" width="12" height="40" rx="6" fill="#FDE68A"/>
+            <rect x="378" y="280" width="12" height="40" rx="6" fill="#FDE68A"/>
+            <!-- Person 2 hair -->
+            <path d="M348 212 Q370 195 392 212 Q390 200 370 196 Q350 200 348 212Z" fill="#92400E"/>
+            <!-- Keyboard -->
+            <rect x="168" y="295" width="80" height="10" rx="3" fill="#94A3B8"/>
+            <!-- Plants -->
+            <rect x="58" y="270" width="8" height="30" rx="4" fill="#6B7280"/>
+            <circle cx="62" cy="260" r="18" fill="#10B981"/>
+            <circle cx="52" cy="270" r="12" fill="#059669"/>
+            <circle cx="72" cy="268" r="10" fill="#34D399"/>
+            <!-- Floating icons -->
+            <circle cx="430" cy="120" r="28" fill="rgba(10,102,194,0.1)" stroke="#0A66C2" stroke-width="1.5"/>
+            <text x="430" y="128" text-anchor="middle" fill="#0A66C2" font-size="20">💡</text>
+            <circle cx="70" cy="140" r="28" fill="rgba(108,63,232,0.1)" stroke="#6C3FE8" stroke-width="1.5"/>
+            <text x="70" y="148" text-anchor="middle" fill="#6C3FE8" font-size="20">🚀</text>
+            <circle cx="250" cy="80" r="28" fill="rgba(255,107,53,0.1)" stroke="#FF6B35" stroke-width="1.5"/>
+            <text x="250" y="88" text-anchor="middle" fill="#FF6B35" font-size="20">⭐</text>
+            <!-- Connecting lines (decorative) -->
+            <line x1="98" y1="140" x2="222" y2="80" stroke="rgba(108,63,232,0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+            <line x1="278" y1="80" x2="402" y2="120" stroke="rgba(10,102,194,0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VISION & MISSION ═══ -->
+  <section class="vision-mission">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" style="background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.8); border-color:rgba(255,255,255,0.15);">Purpose</div>
+        <h2 class="light">Vision &amp; Mission</h2>
+        <p class="light">The principles that guide every decision we make.</p>
+      </div>
+      <div class="vm-grid animate-on-scroll">
+        <div class="vm-card">
+          <div class="vm-icon">🔭</div>
+          <h3>Our Vision</h3>
+          <p>To be the world's most trusted technology partner — a company where businesses of every size can access cutting-edge digital solutions that drive real growth, operational excellence, and competitive advantage. We envision a future where every organization is empowered by intelligent, human-centric technology.</p>
+        </div>
+        <div class="vm-card">
+          <div class="vm-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>To deliver innovative, scalable, and reliable technology solutions that transform how businesses operate and compete. We combine deep technical expertise with genuine client partnership, ensuring every project creates measurable value. Our commitment is to quality, transparency, and long-term success for every client we serve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CORE VALUES ═══ -->
+  <section class="core-values">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">What We Stand For</div>
+        <h2>Our Core Values</h2>
+        <p>These six principles are the bedrock of everything we do at AcuraTech Global.</p>
+      </div>
+      <div class="values-grid stagger-children">
+        <div class="value-card animate-on-scroll">
+          <div class="value-icon" style="background:rgba(10,102,194,0.1);">💡</div>
+          <h3>Innovation</h3>
+          <p>We embrace change and continuously seek creative solutions. From AI to cloud-native architectures, we stay at the forefront of technology to give clients an edge.</p>
+        </div>
+        <div class="value-card animate-on-scroll">
+          <div class="value-icon" style="background:rgba(16,185,129,0.1);">🤝</div>
+          <h3>Integrity</h3>
+          <p>We operate with radical transparency, honoring every commitment. Our clients trust us because we do what we say and say what we mean — always.</p>
+        </div>
+        <div class="value-card animate-on-scroll">
+          <div class="value-icon" style="background:rgba(255,107,53,0.1);">⭐</div>
+          <h3>Excellence</h3>
+          <p>Mediocrity is not in our vocabulary. We hold our work to the highest standards, consistently exceeding expectations on every delivery.</p>
+        </div>
+        <div class="value-card animate-on-scroll">
+          <div class="value-icon" style="background:rgba(108,63,232,0.1);">👥</div>
+          <h3>Collaboration</h3>
+          <p>Great products are built by great teams working together. We foster open communication — internally and with clients — to build real partnerships.</p>
+        </div>
+        <div class="value-card animate-on-scroll">
+          <div class="value-icon" style="background:rgba(234,179,8,0.1);">❤️</div>
+          <h3>Customer-First</h3>
+          <p>Every decision starts with the question: "What's best for our client?" Client success is our success, and we go above and beyond to deliver it.</p>
+        </div>
+        <div class="value-card animate-on-scroll">
+          <div class="value-icon" style="background:rgba(239,68,68,0.1);">⚡</div>
+          <h3>Agility</h3>
+          <p>Markets move fast. We embrace agile methodologies to respond rapidly to change, delivering value incrementally and adapting without friction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TEAM ═══ -->
+  <section class="team-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">The People Behind the Product</div>
+        <h2>Meet Our Leadership</h2>
+        <p>Experienced, passionate, and driven by a shared purpose — to transform businesses through technology.</p>
+      </div>
+      <div class="team-grid stagger-children">
+
+        <!-- Rahul Sharma -->
+        <div class="team-card animate-on-scroll">
+          <div class="avatar avatar-rs">RS</div>
+          <div class="team-name">Rahul Sharma</div>
+          <div class="team-role">CEO &amp; Co-Founder</div>
+          <div class="team-bio">With 20+ years in enterprise technology, Rahul leads AcuraTech's global strategy and vision. Previously a Principal Engineer at Google, he built AcuraTech to close the gap between enterprise capability and SMB access.</div>
+          <a href="#" class="team-linkedin" aria-label="Rahul Sharma LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <!-- Priya Patel -->
+        <div class="team-card animate-on-scroll">
+          <div class="avatar avatar-pp">PP</div>
+          <div class="team-name">Priya Patel</div>
+          <div class="team-role">CTO</div>
+          <div class="team-bio">Priya architects the technical direction of AcuraTech. A cloud and AI specialist with an MIT background, she drives innovation in our platform, ensuring we stay ahead of the technology curve for every client.</div>
+          <a href="#" class="team-linkedin" aria-label="Priya Patel LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <!-- James Wilson -->
+        <div class="team-card animate-on-scroll">
+          <div class="avatar avatar-jw">JW</div>
+          <div class="team-name">James Wilson</div>
+          <div class="team-role">Head of Design</div>
+          <div class="team-bio">James brings 15 years of product and UX design experience from Apple and Airbnb. He leads our design practice with a philosophy that great experiences are invisible — they just work, beautifully.</div>
+          <a href="#" class="team-linkedin" aria-label="James Wilson LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <!-- Sarah Chen -->
+        <div class="team-card animate-on-scroll">
+          <div class="avatar avatar-sc">SC</div>
+          <div class="team-name">Sarah Chen</div>
+          <div class="team-role">VP Sales</div>
+          <div class="team-bio">Sarah has built and led sales teams at Salesforce and HubSpot. At AcuraTech she ensures every client relationship starts with a deep understanding of their goals — not just a product pitch.</div>
+          <a href="#" class="team-linkedin" aria-label="Sarah Chen LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STATS STRIP ═══ -->
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="animate-on-scroll">
+          <div class="stat-number" data-target="500">0</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="animate-on-scroll">
+          <div class="stat-number" data-target="200">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="animate-on-scroll">
+          <div class="stat-number" data-target="10">0</div>
+          <div class="stat-label">Years of Excellence</div>
+        </div>
+        <div class="animate-on-scroll">
+          <div class="stat-number" data-target="98">0</div>
+          <div class="stat-label">Client Satisfaction %</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CERTIFICATIONS ═══ -->
+  <section class="certifications">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Trust &amp; Compliance</div>
+        <h2>Our Certifications &amp; Partnerships</h2>
+        <p>Recognized by global standards bodies and world-leading technology providers.</p>
+      </div>
+      <div class="cert-pills animate-on-scroll">
+        <div class="cert-pill"><span class="cert-dot"></span>ISO 9001:2015</div>
+        <div class="cert-pill"><span class="cert-dot"></span>AWS Consulting Partner</div>
+        <div class="cert-pill"><span class="cert-dot"></span>Google Cloud Partner</div>
+        <div class="cert-pill"><span class="cert-dot"></span>Microsoft Gold Partner</div>
+        <div class="cert-pill"><span class="cert-dot"></span>CMMI Level 3</div>
+        <div class="cert-pill"><span class="cert-dot"></span>SOC 2 Type II</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo" aria-label="AcuraTech Global – Home">
+        <img src="assets/images/logo.png" alt="AcuraTech Global" class="footer-logo-img" width="175" height="46" />
+      </a>
+        <p style="color:rgba(255,255,255,0.6); font-family:'Inter',sans-serif; line-height:1.7; font-size:0.9rem;">Transforming Businesses Through Technology. Your trusted partner for digital innovation and growth.</p>
+        <div class="footer-socials" aria-label="Social media links">
+              <a href="https://in.linkedin.com/company/acuratech-global" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/acuratechglobal" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/acuratechglobal?fqnt=MTJtbnV0OXJpMGZpbQ%3D%3D&utm_source=qr" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#testimonials">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#software">Software Development</a></li>
+          <li><a href="services.html#mobile">Mobile Apps</a></li>
+          <li><a href="services.html#cloud">Cloud Solutions</a></li>
+          <li><a href="services.html#security">Cybersecurity</a></li>
+          <li><a href="services.html#data">Data &amp; Analytics</a></li>
+          <li><a href="services.html#design">UI/UX Design</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact-list">
+          <li><i class="fas fa-map-marker-alt"></i> STPI Incubation Building C-184, Phase 8A, Mohali, India</li>
+          <li><i class="fas fa-phone"></i> <a href="tel:+918427777775">+91 842 777 7775</a></li>
+          <li><i class="fas fa-envelope"></i> <a href="mailto:info@acuratechglobal.com">info@acuratechglobal.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 AcuraTech Global. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

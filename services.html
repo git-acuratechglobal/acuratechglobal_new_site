@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore AcuraTech Global's full range of technology services — from custom software development and mobile apps to cloud solutions, cybersecurity, data analytics, and UI/UX design." />
+  <meta property="og:title" content="Our Services | AcuraTech Global" />
+  <meta property="og:description" content="End-to-end technology services that transform businesses. Custom software, mobile apps, cloud, cybersecurity, data analytics, and design." />
+  <title>Our Services | AcuraTech Global</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* Container */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, #0F0F23 0%, #1a1a3e 50%, #0A66C2 100%);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(108,63,232,0.35) 0%, transparent 60%);
+    }
+    .page-hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      color: #fff;
+      position: relative;
+    }
+    .page-hero p {
+      font-family: 'Inter', sans-serif;
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      margin: 16px auto 0;
+      line-height: 1.8;
+      position: relative;
+    }
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.65);
+      position: relative;
+    }
+    .breadcrumb a { color: #60A5FA; text-decoration: none; }
+    .breadcrumb span { color: rgba(255,255,255,0.4); }
+
+    /* Section Header */
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(10,102,194,0.1);
+      color: #0A66C2;
+      border: 1px solid rgba(10,102,194,0.2);
+      border-radius: 50px;
+      padding: 6px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .section-header h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 16px;
+    }
+    .section-header h2.light { color: #fff; }
+    .section-header p { font-family: 'Inter', sans-serif; color: #64748B; max-width: 580px; margin: 0 auto; line-height: 1.8; }
+    .section-header p.light { color: rgba(255,255,255,0.65); }
+
+    /* Services Grid Section */
+    .services-detail { padding: 100px 0; background: #F8FAFF; }
+    .services-detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px; }
+
+    .service-detail-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 44px 36px;
+      box-shadow: 0 4px 24px rgba(10,102,194,0.07);
+      border: 1px solid rgba(10,102,194,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-detail-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(10,102,194,0.14);
+    }
+    .svc-icon-wrap {
+      width: 72px; height: 72px;
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+      flex-shrink: 0;
+    }
+    .svc-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #1E293B;
+      margin-bottom: 14px;
+    }
+    .svc-desc {
+      font-family: 'Inter', sans-serif;
+      color: #64748B;
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .svc-sub-list {
+      list-style: none;
+      margin: 0 0 28px;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .svc-sub-list li {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .svc-sub-list li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0A66C2, #6C3FE8);
+      flex-shrink: 0;
+    }
+    .btn-quote {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #0A66C2, #6C3FE8);
+      color: #fff;
+      border-radius: 50px;
+      padding: 12px 28px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      align-self: flex-start;
+      margin-top: auto;
+    }
+    .btn-quote:hover { opacity: 0.9; transform: translateX(4px); }
+
+    /* Why Our Services */
+    .why-services { padding: 80px 0; background: #0F0F23; }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+    .why-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .why-card:hover { background: rgba(10,102,194,0.15); border-color: rgba(10,102,194,0.4); }
+    .why-icon { font-size: 2.2rem; margin-bottom: 16px; }
+    .why-card h4 { font-family: 'Poppins', sans-serif; font-weight: 700; color: #fff; font-size: 1rem; margin-bottom: 10px; }
+    .why-card p { font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.6; }
+
+    /* CTA Strip */
+    .cta-strip {
+      padding: 90px 0;
+      background: linear-gradient(135deg, #0A66C2 0%, #6C3FE8 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);
+    }
+    .cta-strip h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .cta-strip p { font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 36px; position: relative; }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-cta-white {
+      background: #fff;
+      color: #0A66C2;
+      border-radius: 50px;
+      padding: 16px 36px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-cta-white:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
+    .btn-cta-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.6);
+      border-radius: 50px;
+      padding: 14px 36px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-cta-outline:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+
+    /* Responsive */
+    @media (max-width: 1024px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) { .services-detail-grid { grid-template-columns: 1fr; } .svc-sub-list { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .why-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- Page Loader -->
+<div id="page-loader" class="page-loader">
+  <div class="loader-spinner"></div>
+</div>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress" class="scroll-progress"></div>
+
+<!-- ═══ NAVBAR ═══ -->
+<header id="navbar" class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="AcuraTech Global – Home">
+        <img src="assets/images/logo.png" alt="AcuraTech Global" class="site-logo" width="165" height="44" />
+      </a>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="menu-btn" id="menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="index.html#portfolio">Portfolio</a>
+    <a href="contact.html">Contact</a>
+    </div>
+</header>
+
+<main>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Our Services</h1>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Services</span>
+      </nav>
+      <p>End-to-end technology services crafted to transform your business — from strategy and design to development, deployment, and beyond.</p>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES DETAIL GRID ═══ -->
+  <section class="services-detail" id="services-grid">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">What We Do</div>
+        <h2>Comprehensive Technology Solutions</h2>
+        <p>Six core service areas, each backed by deep expertise, agile delivery, and an obsession with outcomes.</p>
+      </div>
+
+      <div class="services-detail-grid stagger-children">
+
+        <!-- Software Development -->
+        <div class="service-detail-card animate-on-scroll" id="software">
+          <div class="svc-icon-wrap" style="background:rgba(10,102,194,0.1);">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <rect x="4" y="8" width="32" height="24" rx="4" stroke="#0A66C2" stroke-width="2" fill="none"/>
+              <path d="M14 17 L10 20 L14 23" stroke="#0A66C2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M26 17 L30 20 L26 23" stroke="#0A66C2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 15 L18 25" stroke="#6C3FE8" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="svc-title">Software Development</div>
+          <div class="svc-desc">We engineer scalable, robust software solutions tailored to your unique business requirements. From greenfield custom applications to complex enterprise systems, our senior engineers apply best-in-class architecture patterns, clean code principles, and modern frameworks. We also specialize in legacy modernization, transforming outdated systems into agile, cloud-ready platforms without disrupting operations.</div>
+          <ul class="svc-sub-list">
+            <li>Custom Web Applications</li>
+            <li>Enterprise Software</li>
+            <li>API Development &amp; Integration</li>
+            <li>Legacy System Modernization</li>
+            <li>Microservices Architecture</li>
+            <li>SaaS Product Engineering</li>
+          </ul>
+          <a href="contact.html" class="btn-quote">Get a Quote →</a>
+        </div>
+
+        <!-- Mobile App Development -->
+        <div class="service-detail-card animate-on-scroll" id="mobile">
+          <div class="svc-icon-wrap" style="background:rgba(108,63,232,0.1);">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <rect x="11" y="4" width="18" height="32" rx="4" stroke="#6C3FE8" stroke-width="2" fill="none"/>
+              <circle cx="20" cy="30" r="2" fill="#6C3FE8"/>
+              <rect x="16" y="8" width="8" height="2" rx="1" fill="#6C3FE8"/>
+              <rect x="14" y="14" width="12" height="10" rx="2" fill="rgba(108,63,232,0.2)" stroke="#6C3FE8" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <div class="svc-title">Mobile App Development</div>
+          <div class="svc-desc">We build high-performance mobile applications for iOS and Android that users love. Whether you need a cross-platform solution using React Native or Flutter, a fully native experience, or a Progressive Web App, our mobile team delivers polished, feature-rich apps that drive engagement. Every app is built with performance, security, and App Store compliance in mind from day one.</div>
+          <ul class="svc-sub-list">
+            <li>Native iOS (Swift)</li>
+            <li>Native Android (Kotlin)</li>
+            <li>React Native</li>
+            <li>Flutter</li>
+            <li>Progressive Web Apps (PWA)</li>
+            <li>App Store Optimization</li>
+          </ul>
+          <a href="contact.html" class="btn-quote">Get a Quote →</a>
+        </div>
+
+        <!-- Cloud Solutions -->
+        <div class="service-detail-card animate-on-scroll" id="cloud">
+          <div class="svc-icon-wrap" style="background:rgba(16,185,129,0.1);">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <path d="M30 26a6 6 0 0 0-6-6 6 6 0 0 0-11.95 1.5A5 5 0 0 0 14 31h16a4 4 0 0 0 0-5z" stroke="#10B981" stroke-width="2" fill="rgba(16,185,129,0.1)"/>
+              <path d="M20 24 V34 M17 31 L20 34 L23 31" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="svc-title">Cloud Solutions</div>
+          <div class="svc-desc">Accelerate your digital transformation with our comprehensive cloud services. We are certified partners of AWS, Azure, and Google Cloud, enabling us to design and execute cloud strategies tailored to your workloads. From seamless cloud migrations with zero data loss to serverless architectures and FinOps cost optimization, we make the cloud work for your bottom line, not against it.</div>
+          <ul class="svc-sub-list">
+            <li>Cloud Migration (Lift &amp; Shift)</li>
+            <li>AWS / Azure / GCP Architecture</li>
+            <li>Serverless &amp; Containerization</li>
+            <li>Cloud-Native Development</li>
+            <li>DevOps &amp; CI/CD Pipelines</li>
+            <li>Cloud Cost Optimization</li>
+          </ul>
+          <a href="contact.html" class="btn-quote">Get a Quote →</a>
+        </div>
+
+        <!-- Cybersecurity -->
+        <div class="service-detail-card animate-on-scroll" id="security">
+          <div class="svc-icon-wrap" style="background:rgba(239,68,68,0.1);">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <path d="M20 5 L34 11 V21 C34 29 27 35 20 37 C13 35 6 29 6 21 V11 Z" stroke="#EF4444" stroke-width="2" fill="rgba(239,68,68,0.08)"/>
+              <path d="M14 20 L18 24 L26 16" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="svc-title">Cybersecurity</div>
+          <div class="svc-desc">Protect your business from evolving threats with our comprehensive cybersecurity services. Our certified security experts conduct in-depth penetration testing, vulnerability assessments, and security audits to identify risks before attackers do. We help organizations achieve and maintain compliance with frameworks like SOC 2, ISO 27001, GDPR, and HIPAA, while building security operations capabilities that keep you protected 24/7.</div>
+          <ul class="svc-sub-list">
+            <li>Penetration Testing</li>
+            <li>Security Architecture Review</li>
+            <li>SOC 2 / ISO 27001 Compliance</li>
+            <li>GDPR &amp; HIPAA Advisory</li>
+            <li>Security Operations Center (SOC)</li>
+            <li>Incident Response Planning</li>
+          </ul>
+          <a href="contact.html" class="btn-quote">Get a Quote →</a>
+        </div>
+
+        <!-- Data & Analytics -->
+        <div class="service-detail-card animate-on-scroll" id="data">
+          <div class="svc-icon-wrap" style="background:rgba(234,179,8,0.1);">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <rect x="6" y="26" width="8" height="8" rx="2" fill="rgba(234,179,8,0.3)" stroke="#CA8A04" stroke-width="1.5"/>
+              <rect x="16" y="18" width="8" height="16" rx="2" fill="rgba(234,179,8,0.3)" stroke="#CA8A04" stroke-width="1.5"/>
+              <rect x="26" y="10" width="8" height="24" rx="2" fill="rgba(234,179,8,0.3)" stroke="#CA8A04" stroke-width="1.5"/>
+              <path d="M8 20 L18 14 L28 8" stroke="#CA8A04" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 2"/>
+            </svg>
+          </div>
+          <div class="svc-title">Data &amp; Analytics</div>
+          <div class="svc-desc">Unlock the value hidden in your data. Our data engineering and analytics team builds end-to-end data platforms — from ingestion and ETL pipelines to warehousing, BI dashboards, and machine learning models. We help you go from raw data to actionable insights faster than you thought possible, using modern stacks like Snowflake, dbt, Apache Spark, and Python ML frameworks.</div>
+          <ul class="svc-sub-list">
+            <li>BI Dashboards (Power BI / Looker)</li>
+            <li>Machine Learning Models</li>
+            <li>Data Pipelines &amp; ETL</li>
+            <li>Data Warehouse Design</li>
+            <li>Real-time Streaming Analytics</li>
+            <li>Generative AI Integration</li>
+          </ul>
+          <a href="contact.html" class="btn-quote">Get a Quote →</a>
+        </div>
+
+        <!-- UI/UX Design -->
+        <div class="service-detail-card animate-on-scroll" id="design">
+          <div class="svc-icon-wrap" style="background:rgba(255,107,53,0.1);">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="13" stroke="#FF6B35" stroke-width="2" fill="rgba(255,107,53,0.08)"/>
+              <circle cx="20" cy="20" r="5" fill="#FF6B35" opacity="0.3"/>
+              <circle cx="20" cy="20" r="2" fill="#FF6B35"/>
+              <path d="M20 7 V13 M20 27 V33 M7 20 H13 M27 20 H33" stroke="#FF6B35" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="svc-title">UI/UX Design</div>
+          <div class="svc-desc">Great design is invisible — it guides users to their goals effortlessly. Our UX designers start with deep user research and journey mapping before a single pixel is drawn, ensuring that every design decision is grounded in real user needs and business outcomes. From high-fidelity prototypes to production-ready design systems, we craft digital experiences that convert and delight.</div>
+          <ul class="svc-sub-list">
+            <li>User Research &amp; Testing</li>
+            <li>Wireframing &amp; Prototyping</li>
+            <li>Interaction Design</li>
+            <li>Design Systems &amp; Style Guides</li>
+            <li>Accessibility Audits (WCAG)</li>
+            <li>Figma &amp; Adobe XD Deliverables</li>
+          </ul>
+          <a href="contact.html" class="btn-quote">Get a Quote →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHY OUR SERVICES ═══ -->
+  <section class="why-services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" style="background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.8); border-color:rgba(255,255,255,0.15);">Our Differentiators</div>
+        <h2 class="light">Why Choose AcuraTech?</h2>
+        <p class="light">We don't just write code — we build long-term partnerships and deliver real business outcomes.</p>
+      </div>
+      <div class="why-grid stagger-children">
+        <div class="why-card animate-on-scroll">
+          <div class="why-icon">🚀</div>
+          <h4>Faster Time to Market</h4>
+          <p>Agile delivery with 2-week sprints and continuous deployment so you ship features while competitors are still planning.</p>
+        </div>
+        <div class="why-card animate-on-scroll">
+          <div class="why-icon">🏆</div>
+          <h4>Senior Talent Only</h4>
+          <p>No juniors on your project. Every engagement is led by senior engineers and architects with 10+ years of experience.</p>
+        </div>
+        <div class="why-card animate-on-scroll">
+          <div class="why-icon">🔒</div>
+          <h4>Security by Design</h4>
+          <p>Security is baked in from day one — not bolted on at the end. Every system we build passes rigorous security review.</p>
+        </div>
+        <div class="why-card animate-on-scroll">
+          <div class="why-icon">📊</div>
+          <h4>Transparent Reporting</h4>
+          <p>Weekly status calls, live project dashboards, and direct access to your team. No surprises, ever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA STRIP ═══ -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Ready to Get Started?</h2>
+      <p>Let's talk about how AcuraTech can accelerate your next project. Free 30-minute strategy call — no commitment.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-cta-white">Schedule a Free Call</a>
+        <a href="about.html" class="btn-cta-outline">Learn About Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo" aria-label="AcuraTech Global – Home">
+        <img src="assets/images/logo.png" alt="AcuraTech Global" class="footer-logo-img" width="175" height="46" />
+      </a>
+        <p style="color:rgba(255,255,255,0.6); font-family:'Inter',sans-serif; line-height:1.7; font-size:0.9rem;">Transforming Businesses Through Technology. Your trusted partner for digital innovation and growth.</p>
+        <div class="footer-socials" aria-label="Social media links">
+              <a href="https://in.linkedin.com/company/acuratech-global" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/acuratechglobal" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/acuratechglobal?fqnt=MTJtbnV0OXJpMGZpbQ%3D%3D&utm_source=qr" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#testimonials">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#software">Software Development</a></li>
+          <li><a href="services.html#mobile">Mobile Apps</a></li>
+          <li><a href="services.html#cloud">Cloud Solutions</a></li>
+          <li><a href="services.html#security">Cybersecurity</a></li>
+          <li><a href="services.html#data">Data &amp; Analytics</a></li>
+          <li><a href="services.html#design">UI/UX Design</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact-list">
+          <li><i class="fas fa-map-marker-alt"></i> STPI Incubation Building C-184, Phase 8A, Mohali, India</li>
+          <li><i class="fas fa-phone"></i> <a href="tel:+918427777775">+91 842 777 7775</a></li>
+          <li><i class="fas fa-envelope"></i> <a href="mailto:info@acuratechglobal.com">info@acuratechglobal.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 AcuraTech Global. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

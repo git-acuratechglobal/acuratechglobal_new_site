@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AcuraTech Global Insights & Blog – Stay updated with the latest in technology, cloud, mobile, AI, and enterprise software development." />
+  <meta name="keywords" content="AcuraTech Global, blog, tech insights, AI, cloud, mobile development, cybersecurity" />
+  <title>Insights &amp; Blog | AcuraTech Global</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* =============================================
+       PAGE-SPECIFIC STYLES – BLOG
+       ============================================= */
+
+    /* ---------- Page Loader ---------- */
+    #page-loader {
+      position: fixed;
+      inset: 0;
+      background: var(--dark-bg, #0F0F23);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+    #page-loader.hidden { opacity: 0; visibility: hidden; }
+    .loader-ring {
+      width: 56px; height: 56px;
+      border: 4px solid rgba(255,255,255,0.1);
+      border-top-color: #0A66C2;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ---------- Scroll Progress ---------- */
+    #scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, #0A66C2, #6C3FE8, #FF6B35);
+      z-index: 10001;
+      transition: width 0.1s linear;
+    }
+
+    /* ---------- Back to Top ---------- */
+    #back-to-top {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0A66C2, #6C3FE8);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+      z-index: 999;
+      box-shadow: 0 4px 15px rgba(10,102,194,0.4);
+    }
+    #back-to-top.visible { opacity: 1; visibility: visible; }
+    #back-to-top:hover { transform: translateY(-3px); }
+
+    /* ---------- Navbar ---------- */
+    #navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15,15,35,0.6);
+      backdrop-filter: blur(0px);
+      border-bottom: 1px solid transparent;
+      transition: background 0.4s, backdrop-filter 0.4s, border-color 0.4s;
+      padding: 0 2rem;
+    }
+    #navbar.scrolled {
+      background: rgba(15,15,35,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom-color: rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: #fff;
+    }
+    .nav-logo .logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, #0A66C2, #6C3FE8);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: #fff;
+    }
+    .nav-logo span.accent { color: #0A66C2; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0 0 0 auto;
+      padding: 0;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: #0A66C2;
+      transition: width 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #fff; }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-cta {
+      background: linear-gradient(135deg, #0A66C2, #6C3FE8);
+      color: #fff !important;
+      padding: 0.55rem 1.3rem;
+      border-radius: 50px;
+      font-weight: 600 !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+    #menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    #mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(15,15,35,0.97);
+      padding: 1rem 2rem 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    #mobile-menu.open { display: flex; }
+    #mobile-menu a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      padding: 0.6rem 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    #mobile-menu a.active, #mobile-menu a:hover { color: #0A66C2; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      #menu-btn { display: block; }
+    }
+
+    /* ---------- Page Hero ---------- */
+    .page-hero {
+      background: linear-gradient(135deg, #0F0F23 0%, #1a1a3e 40%, #0d2240 100%);
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(108,63,232,0.25) 0%, transparent 70%);
+    }
+    .page-hero .hero-content { position: relative; z-index: 1; }
+    .page-hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .page-hero h1 span {
+      background: linear-gradient(135deg, #6C3FE8, #FF6B35);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-hero p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .breadcrumb a { color: #0A66C2; text-decoration: none; }
+    .breadcrumb i { font-size: 0.7rem; }
+
+    /* ---------- General Section ---------- */
+    .section-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ---------- Featured Article ---------- */
+    .featured-section {
+      padding: 5rem 2rem;
+      background: #F8FAFF;
+    }
+    .featured-card {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 768px) { .featured-card { grid-template-columns: 1fr; } }
+
+    .featured-illustration {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      display: block;
+    }
+
+    .featured-content {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .category-badge {
+      display: inline-block;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-ai         { background: #EBF5FF; color: #0A66C2; }
+    .badge-cloud      { background: #FFF4EB; color: #FF6B35; }
+    .badge-mobile     { background: #F0EBFF; color: #6C3FE8; }
+    .badge-design     { background: #EBFFF5; color: #10B981; }
+    .badge-dev        { background: #F1F5F9; color: #475569; }
+    .badge-security   { background: #FFF1F1; color: #EF4444; }
+
+    .featured-content h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: #64748B;
+      flex-wrap: wrap;
+    }
+    .article-meta span { display: flex; align-items: center; gap: 0.3rem; }
+    .featured-content p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: #64748B;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.8rem;
+      background: linear-gradient(135deg, #0A66C2, #6C3FE8);
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      align-self: flex-start;
+    }
+    .read-more-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(10,102,194,0.4); }
+
+    /* ---------- Blog Grid ---------- */
+    .blog-section {
+      padding: 5rem 2rem;
+      background: #F8FAFF;
+    }
+    .blog-section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .blog-section-header h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 0.5rem;
+    }
+    .blog-section-header p {
+      font-family: 'Inter', sans-serif;
+      color: #64748B;
+      font-size: 1rem;
+    }
+    .blog-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 1024px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .blog-grid { grid-template-columns: 1fr; } }
+
+    .blog-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px rgba(10,102,194,0.15);
+    }
+    .blog-thumb {
+      width: 100%;
+      height: 180px;
+      display: block;
+      flex-shrink: 0;
+    }
+    .blog-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .blog-body .category-badge { margin-bottom: 0.75rem; }
+    .blog-body h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1E293B;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+    }
+    .blog-meta {
+      display: flex;
+      gap: 0.75rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: #94A3B8;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .blog-meta span { display: flex; align-items: center; gap: 0.3rem; }
+    .blog-excerpt {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: #64748B;
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 1.2rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .blog-read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #0A66C2;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: gap 0.2s, color 0.2s;
+      margin-top: auto;
+    }
+    .blog-read-more:hover { color: #6C3FE8; gap: 0.7rem; }
+
+    /* ---------- Newsletter ---------- */
+    .newsletter-section {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #0A66C2 0%, #6C3FE8 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .newsletter-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 70%);
+    }
+    .newsletter-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .newsletter-icon {
+      width: 64px; height: 64px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    .newsletter-inner h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+    .newsletter-inner p {
+      font-family: 'Inter', sans-serif;
+      color: rgba(255,255,255,0.8);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 0.85rem 1.3rem;
+      border-radius: 50px;
+      border: 2px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      backdrop-filter: blur(8px);
+    }
+    .newsletter-form input[type="email"]::placeholder { color: rgba(255,255,255,0.6); }
+    .newsletter-form input[type="email"]:focus {
+      border-color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.18);
+    }
+    .newsletter-form button {
+      padding: 0.85rem 1.8rem;
+      border-radius: 50px;
+      border: none;
+      background: #fff;
+      color: #0A66C2;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .newsletter-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    .newsletter-note {
+      margin-top: 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: #0F0F23;
+      color: rgba(255,255,255,0.7);
+      font-family: 'Inter', sans-serif;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-main {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2rem;
+      display: grid;
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 3rem;
+    }
+    @media (max-width: 1024px) { .footer-main { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px)  { .footer-main { grid-template-columns: 1fr; } }
+    .footer-brand .nav-logo { margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 280px; }
+    .footer-social { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+    .footer-social a {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      font-size: 0.95rem;
+    }
+    .footer-social a:hover { background: #0A66C2; color: #fff; }
+    .footer-col h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: #0A66C2; }
+    .footer-contact-item {
+      display: flex; gap: 0.6rem; align-items: flex-start;
+      margin-bottom: 0.8rem; font-size: 0.9rem;
+    }
+    .footer-contact-item i { color: #0A66C2; margin-top: 2px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* ---------- Animate on scroll ---------- */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .animate-on-scroll.animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+    .animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
+    .animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+    .animate-on-scroll:nth-child(5) { transition-delay: 0.1s; }
+    .animate-on-scroll:nth-child(6) { transition-delay: 0.2s; }
+  </style>
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div id="page-loader">
+    <div class="loader-ring"></div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="AcuraTech Global – Home">
+        <img src="assets/images/logo.png" alt="AcuraTech Global" class="site-logo" width="165" height="44" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li></li>
+      </ul>
+      <button id="menu-btn" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Get a Quote</a>
+    </nav>
+  </header>
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero">
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Blog</span>
+      </div>
+      <h1>Insights &amp; <span>Blog</span></h1>
+      <p>Stay updated with the latest in tech</p>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED ARTICLE ===================== -->
+  <section class="featured-section">
+    <article class="featured-card animate-on-scroll">
+      <!-- Left: Abstract SVG Illustration -->
+      <svg class="featured-illustration" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" aria-label="AI illustration">
+        <defs>
+          <linearGradient id="feat-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0F0F23"/>
+            <stop offset="50%" stop-color="#1a1a3e"/>
+            <stop offset="100%" stop-color="#0d2240"/>
+          </linearGradient>
+          <linearGradient id="feat-g1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0A66C2" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#6C3FE8" stop-opacity="0.9"/>
+          </linearGradient>
+          <linearGradient id="feat-g2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6C3FE8" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#FF6B35" stop-opacity="0.6"/>
+          </linearGradient>
+          <radialGradient id="feat-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#0A66C2" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+        </defs>
+        <!-- Background -->
+        <rect width="600" height="400" fill="url(#feat-bg)"/>
+        <!-- Glow -->
+        <ellipse cx="300" cy="200" rx="220" ry="180" fill="url(#feat-glow)"/>
+        <!-- Hexagon grid (AI network) -->
+        <g opacity="0.18" stroke="rgba(10,102,194,1)" stroke-width="1" fill="none">
+          <polygon points="300,80 340,102 340,146 300,168 260,146 260,102"/>
+          <polygon points="380,126 420,148 420,192 380,214 340,192 340,148"/>
+          <polygon points="220,126 260,148 260,192 220,214 180,192 180,148"/>
+          <polygon points="300,172 340,194 340,238 300,260 260,238 260,194"/>
+          <polygon points="380,218 420,240 420,284 380,306 340,284 340,240"/>
+          <polygon points="220,218 260,240 260,284 220,306 180,284 180,240"/>
+          <polygon points="300,264 340,286 340,330 300,352 260,330 260,286"/>
+        </g>
+        <!-- Central circle -->
+        <circle cx="300" cy="195" r="62" fill="url(#feat-g1)" opacity="0.9"/>
+        <circle cx="300" cy="195" r="44" fill="rgba(255,255,255,0.08)"/>
+        <!-- Brain/circuit icon -->
+        <circle cx="300" cy="195" r="28" fill="rgba(255,255,255,0.15)"/>
+        <text x="300" y="202" text-anchor="middle" fill="#fff" font-size="24" font-family="FontAwesome">&#xf544;</text>
+        <!-- Orbiting dots with connecting lines -->
+        <line x1="300" y1="133" x2="300" y2="167" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+        <circle cx="300" cy="125" r="8" fill="url(#feat-g2)"/>
+        <line x1="362" y1="157" x2="328" y2="176" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+        <circle cx="370" cy="153" r="8" fill="url(#feat-g2)"/>
+        <line x1="362" y1="233" x2="328" y2="214" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+        <circle cx="370" cy="237" r="8" fill="url(#feat-g2)"/>
+        <line x1="300" y1="257" x2="300" y2="223" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+        <circle cx="300" cy="265" r="8" fill="url(#feat-g2)"/>
+        <line x1="238" y1="233" x2="272" y2="214" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+        <circle cx="230" cy="237" r="8" fill="url(#feat-g2)"/>
+        <line x1="238" y1="157" x2="272" y2="176" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+        <circle cx="230" cy="153" r="8" fill="url(#feat-g2)"/>
+        <!-- Floating geometric shapes -->
+        <rect x="460" y="40" width="60" height="60" rx="12" fill="url(#feat-g1)" opacity="0.3" transform="rotate(15 490 70)"/>
+        <rect x="80" y="290" width="50" height="50" rx="8" fill="url(#feat-g2)" opacity="0.3" transform="rotate(-10 105 315)"/>
+        <circle cx="510" cy="300" r="30" fill="url(#feat-g1)" opacity="0.2"/>
+        <circle cx="90" cy="80" r="20" fill="url(#feat-g2)" opacity="0.2"/>
+        <!-- Label -->
+        <rect x="160" y="355" width="280" height="30" rx="8" fill="rgba(10,102,194,0.3)"/>
+        <text x="300" y="375" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="13" font-family="Inter,sans-serif" font-weight="600">Artificial Intelligence · Enterprise Development</text>
+      </svg>
+
+      <!-- Right: Content -->
+      <div class="featured-content">
+        <span class="category-badge badge-ai"><i class="fa-solid fa-brain"></i> Artificial Intelligence</span>
+        <h2>The Future of AI in Enterprise Software Development</h2>
+        <div class="article-meta">
+          <span><i class="fa-regular fa-calendar"></i> November 15, 2026</span>
+          <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+          <span><i class="fa-solid fa-star" style="color:#F59E0B;"></i> Featured</span>
+        </div>
+        <p>
+          Artificial Intelligence is no longer a futuristic concept — it's actively reshaping how enterprise software is built, deployed, and maintained. From AI-powered code generation and automated testing pipelines to intelligent UX personalization, development teams are seeing unprecedented productivity gains. As large language models mature and multimodal AI becomes mainstream, the boundaries between human creativity and machine precision continue to blur, unlocking a new era of rapid, reliable software delivery.
+        </p>
+        <a href="#" class="read-more-btn">Read More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== BLOG GRID ===================== -->
+  <section class="blog-section">
+    <div class="blog-section-header animate-on-scroll">
+      <h2>Latest Articles</h2>
+      <p>Explore our latest insights, tutorials, and industry perspectives</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <!-- 1 Cloud Migration -->
+      <article class="blog-card animate-on-scroll">
+        <svg class="blog-thumb" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="b1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FF6B35"/>
+              <stop offset="100%" stop-color="#F59E0B"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="180" fill="url(#b1)"/>
+          <ellipse cx="200" cy="85" rx="90" ry="50" fill="rgba(255,255,255,0.15)"/>
+          <ellipse cx="130" cy="95" rx="60" ry="35" fill="rgba(255,255,255,0.1)"/>
+          <ellipse cx="270" cy="95" rx="60" ry="35" fill="rgba(255,255,255,0.1)"/>
+          <text x="200" y="155" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="12" font-family="Inter,sans-serif">Cloud Migration Strategies</text>
+        </svg>
+        <div class="blog-body">
+          <span class="category-badge badge-cloud">Cloud</span>
+          <h3>Top 10 Cloud Migration Strategies for 2026</h3>
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> Nov 10, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+          </div>
+          <p class="blog-excerpt">Cloud migration remains one of the most critical — and complex — decisions for enterprise IT leaders. We break down the top 10 proven strategies that minimize downtime, reduce cost, and accelerate digital transformation in 2026.</p>
+          <a href="#" class="blog-read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- 2 Secure Mobile Apps -->
+      <article class="blog-card animate-on-scroll">
+        <svg class="blog-thumb" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="b2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6C3FE8"/>
+              <stop offset="100%" stop-color="#A855F7"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="180" fill="url(#b2)"/>
+          <rect x="165" y="20" width="70" height="120" rx="12" fill="rgba(255,255,255,0.15)"/>
+          <rect x="173" y="32" width="54" height="85" rx="6" fill="rgba(255,255,255,0.1)"/>
+          <circle cx="192" cy="75" r="14" fill="rgba(255,255,255,0.3)"/>
+          <path d="M188 70 L192 65 L196 70 L196 78 L188 78 Z" fill="rgba(255,255,255,0.7)"/>
+          <text x="200" y="158" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="12" font-family="Inter,sans-serif">Secure Mobile Development</text>
+        </svg>
+        <div class="blog-body">
+          <span class="category-badge badge-mobile">Mobile</span>
+          <h3>Building Secure Mobile Apps: Best Practices</h3>
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> Nov 5, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+          </div>
+          <p class="blog-excerpt">Security vulnerabilities in mobile apps cost businesses billions annually. This guide covers certificate pinning, secure local storage, biometric authentication, and the OWASP Mobile Top 10 for 2026.</p>
+          <a href="#" class="blog-read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- 3 UI/UX Design -->
+      <article class="blog-card animate-on-scroll">
+        <svg class="blog-thumb" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="b3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#10B981"/>
+              <stop offset="100%" stop-color="#0A66C2"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="180" fill="url(#b3)"/>
+          <circle cx="150" cy="80" r="45" fill="rgba(255,255,255,0.1)"/>
+          <circle cx="250" cy="80" r="45" fill="rgba(255,255,255,0.1)"/>
+          <ellipse cx="200" cy="80" rx="30" ry="30" fill="rgba(255,255,255,0.2)"/>
+          <rect x="90" y="60" width="40" height="40" rx="20" fill="rgba(255,255,255,0.3)"/>
+          <rect x="270" y="60" width="40" height="40" rx="20" fill="rgba(255,255,255,0.3)"/>
+          <text x="200" y="155" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="12" font-family="Inter,sans-serif">UI/UX Design · Business Success</text>
+        </svg>
+        <div class="blog-body">
+          <span class="category-badge badge-design">Design</span>
+          <h3>Why UI/UX Design is Critical for Business Success</h3>
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> Oct 28, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+          </div>
+          <p class="blog-excerpt">A well-designed user experience can increase conversion rates by up to 400%. Discover how strategic UI/UX investment translates directly into revenue growth, user retention, and competitive advantage.</p>
+          <a href="#" class="blog-read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- 4 DevOps vs Traditional -->
+      <article class="blog-card animate-on-scroll">
+        <svg class="blog-thumb" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="b4" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#475569"/>
+              <stop offset="100%" stop-color="#1E293B"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="180" fill="url(#b4)"/>
+          <!-- Two sides -->
+          <rect x="40" y="40" width="130" height="90" rx="10" fill="rgba(10,102,194,0.3)" stroke="rgba(10,102,194,0.6)" stroke-width="1.5"/>
+          <rect x="230" y="40" width="130" height="90" rx="10" fill="rgba(108,63,232,0.3)" stroke="rgba(108,63,232,0.6)" stroke-width="1.5"/>
+          <text x="105" y="88" text-anchor="middle" fill="#fff" font-size="11" font-family="Inter,sans-serif" font-weight="600">Traditional</text>
+          <text x="295" y="88" text-anchor="middle" fill="#fff" font-size="11" font-family="Inter,sans-serif" font-weight="600">DevOps</text>
+          <!-- VS -->
+          <circle cx="200" cy="85" r="20" fill="rgba(255,107,53,0.8)"/>
+          <text x="200" y="90" text-anchor="middle" fill="#fff" font-size="11" font-family="Inter,sans-serif" font-weight="800">VS</text>
+          <text x="200" y="155" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="12" font-family="Inter,sans-serif">DevOps vs Traditional Development</text>
+        </svg>
+        <div class="blog-body">
+          <span class="category-badge badge-dev">Development</span>
+          <h3>DevOps vs Traditional Development: A Deep Dive</h3>
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> Oct 20, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 7 min read</span>
+          </div>
+          <p class="blog-excerpt">Organizations adopting DevOps report 46x more frequent deployments and 440x faster lead times. We compare philosophies, toolchains, team structures, and ROI to help you make the right choice.</p>
+          <a href="#" class="blog-read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- 5 Cybersecurity -->
+      <article class="blog-card animate-on-scroll">
+        <svg class="blog-thumb" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="b5" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#EF4444"/>
+              <stop offset="100%" stop-color="#7C3AED"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="180" fill="url(#b5)"/>
+          <circle cx="200" cy="80" r="50" fill="rgba(255,255,255,0.08)"/>
+          <circle cx="200" cy="80" r="35" fill="rgba(255,255,255,0.1)"/>
+          <circle cx="200" cy="80" r="22" fill="rgba(255,255,255,0.18)"/>
+          <rect x="188" y="55" width="24" height="16" rx="6" fill="rgba(255,255,255,0.4)"/>
+          <rect x="184" y="68" width="32" height="22" rx="5" fill="rgba(255,255,255,0.3)"/>
+          <!-- Warning triangles -->
+          <polygon points="80,120 95,100 110,120" fill="rgba(255,235,59,0.6)"/>
+          <text x="95" y="117" text-anchor="middle" fill="#1E293B" font-size="8" font-weight="bold">!</text>
+          <polygon points="290,120 305,100 320,120" fill="rgba(255,235,59,0.6)"/>
+          <text x="305" y="117" text-anchor="middle" fill="#1E293B" font-size="8" font-weight="bold">!</text>
+          <text x="200" y="155" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="12" font-family="Inter,sans-serif">Cybersecurity · SMB Threats</text>
+        </svg>
+        <div class="blog-body">
+          <span class="category-badge badge-security">Security</span>
+          <h3>Cybersecurity Threats Every SMB Should Know</h3>
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> Oct 15, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+          </div>
+          <p class="blog-excerpt">Small and medium businesses are increasingly targeted by ransomware, phishing, and supply chain attacks. This actionable guide outlines the top 2026 threats and the defense strategies every SMB must implement today.</p>
+          <a href="#" class="blog-read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- 6 React vs Vue vs Angular -->
+      <article class="blog-card animate-on-scroll">
+        <svg class="blog-thumb" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="b6a" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0A66C2"/>
+              <stop offset="100%" stop-color="#6C3FE8"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="180" fill="url(#b6a)"/>
+          <!-- Three framework icons as circles -->
+          <circle cx="100" cy="80" r="38" fill="rgba(97,218,251,0.25)" stroke="rgba(97,218,251,0.6)" stroke-width="2"/>
+          <text x="100" y="77" text-anchor="middle" fill="#fff" font-size="10" font-family="Inter,sans-serif" font-weight="700">React</text>
+          <text x="100" y="92" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9" font-family="Inter,sans-serif">⚛</text>
+          <circle cx="200" cy="80" r="38" fill="rgba(66,185,131,0.25)" stroke="rgba(66,185,131,0.6)" stroke-width="2"/>
+          <text x="200" y="77" text-anchor="middle" fill="#fff" font-size="10" font-family="Inter,sans-serif" font-weight="700">Vue</text>
+          <text x="200" y="92" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9" font-family="Inter,sans-serif">◄►</text>
+          <circle cx="300" cy="80" r="38" fill="rgba(221,0,49,0.25)" stroke="rgba(221,0,49,0.6)" stroke-width="2"/>
+          <text x="300" y="77" text-anchor="middle" fill="#fff" font-size="10" font-family="Inter,sans-serif" font-weight="700">Angular</text>
+          <text x="300" y="92" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9" font-family="Inter,sans-serif">▲</text>
+          <text x="200" y="155" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="12" font-family="Inter,sans-serif">Framework Comparison 2026</text>
+        </svg>
+        <div class="blog-body">
+          <span class="category-badge badge-dev">Development</span>
+          <h3>React vs Vue vs Angular in 2026: Which to Choose?</h3>
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> Oct 8, 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 9 min read</span>
+          </div>
+          <p class="blog-excerpt">The frontend framework debate rages on. With React 20, Vue 4, and Angular 19 all landing in 2026, we provide an objective comparison of performance benchmarks, ecosystem size, learning curves, and enterprise suitability.</p>
+          <a href="#" class="blog-read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+    </div><!-- /blog-grid -->
+  </section>
+
+  <!-- ===================== NEWSLETTER SIGNUP ===================== -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner animate-on-scroll">
+      <div class="newsletter-icon">
+        <i class="fa-solid fa-envelope-open-text"></i>
+      </div>
+      <h2>Stay in the Loop</h2>
+      <p>Get the latest tech insights, tutorials, and industry news delivered to your inbox every week. No spam, ever.</p>
+      <form class="newsletter-form" id="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+        <input
+          type="email"
+          id="newsletter-email"
+          placeholder="Enter your email address"
+          required
+          aria-label="Email address"
+        />
+        <button type="submit">
+          <i class="fa-solid fa-paper-plane"></i> Subscribe
+        </button>
+      </form>
+      <p class="newsletter-note" id="newsletter-msg"></p>
+      <p class="newsletter-note">Join 12,000+ subscribers · Unsubscribe anytime</p>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo" aria-label="AcuraTech Global – Home">
+        <img src="assets/images/logo.png" alt="AcuraTech Global" class="footer-logo-img" width="175" height="46" />
+      </a>
+        <p>Transforming businesses through cutting-edge technology solutions. Your partner in digital innovation since 2014.</p>
+        <div class="footer-socials" aria-label="Social media links">
+              <a href="https://in.linkedin.com/company/acuratech-global" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/acuratechglobal" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/acuratechglobal?fqnt=MTJtbnV0OXJpMGZpbQ%3D%3D&utm_source=qr" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="portfolio.html">Our Work</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Web Development</a></li>
+          <li><a href="services.html">Mobile Apps</a></li>
+          <li><a href="services.html">Cloud Solutions</a></li>
+          <li><a href="services.html">UI/UX Design</a></li>
+          <li><a href="services.html">Cybersecurity</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 842 777 7775</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>info@acuratechglobal.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>123 Tech Avenue, San Francisco, CA 94102</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AcuraTech Global. All rights reserved. | <a href="#" style="color:#0A66C2;">Privacy Policy</a> | <a href="#" style="color:#0A66C2;">Terms of Service</a></p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Page loader
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('page-loader');
+      if (loader) loader.classList.add('hidden');
+    });
+
+    // Scroll progress + back to top
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const bar = document.getElementById('scroll-progress');
+      if (bar) bar.style.width = (scrolled / total * 100) + '%';
+      const btn = document.getElementById('back-to-top');
+      if (btn) btn.classList.toggle('visible', scrolled > 300);
+      document.getElementById('navbar')?.classList.toggle('scrolled', scrolled > 80);
+    });
+    document.getElementById('back-to-top')?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Mobile menu
+    document.getElementById('menu-btn')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu')?.classList.toggle('open');
+    });
+
+    // Animate on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('animated'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // Newsletter form
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+      const msg = document.getElementById('newsletter-msg');
+      if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        msg.textContent = '🎉 Thank you for subscribing! Check your inbox for a confirmation email.';
+        msg.style.color = '#fff';
+        document.getElementById('newsletter-form').reset();
+      } else {
+        msg.textContent = 'Please enter a valid email address.';
+        msg.style.color = 'rgba(255,200,200,0.9)';
+      }
+    }
+  </script>
+</body>
+</html>
