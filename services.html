@@ -216,34 +216,34 @@
 
 <!-- ═══ NAVBAR ═══ -->
 <header id="navbar" class="navbar">
-  <div class="container nav-inner">
+  <nav class="nav-container" aria-label="Main navigation">
     <a href="index.html" class="nav-logo" aria-label="AcuraTech Global – Home">
-        <img src="assets/images/logo.png" alt="AcuraTech Global" class="site-logo" width="165" height="44" />
-      </a>
+      <img src="assets/images/logo.png" alt="AcuraTech Global" class="site-logo" width="165" height="44" />
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link active" aria-current="page">Services</a></li>
+      <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+      <li><a href="blog.html" class="nav-link">Blog</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-pill-cta">Start a Conversation <span class="nav-arrow">↗</span></a>
+    <button id="menu-btn" class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-    <nav class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="nav-actions">
-      <a href="contact.html" class="nav-pill-cta">Start a Conversation <span class="nav-arrow">↗</span></a>
-      <button class="menu-btn" id="menu-btn" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <div id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <ul role="list">
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
+      <li><a href="services.html" class="mobile-link active">Services</a></li>
+      <li><a href="portfolio.html" class="mobile-link">Portfolio</a></li>
+      <li><a href="blog.html" class="mobile-link">Blog</a></li>
+      <li><a href="contact.html" class="mobile-link">Contact</a></li>
+    </ul>
   </div>
-
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html" class="active">Services</a>
-    <a href="index.html#portfolio">Portfolio</a>
-    <a href="contact.html">Contact</a>
-    </div>
 </header>
 
 <main>

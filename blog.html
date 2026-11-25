@@ -78,164 +78,7 @@
     #back-to-top.visible { opacity: 1; visibility: visible; }
     #back-to-top:hover { transform: translateY(-3px); }
 
-    /* ---------- Navbar ---------- */
-    #navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(15,15,35,0.6);
-      backdrop-filter: blur(0px);
-      border-bottom: 1px solid transparent;
-      transition: background 0.4s, backdrop-filter 0.4s, border-color 0.4s;
-      padding: 0 2rem;
-    }
-    #navbar.scrolled {
-      background: rgba(15,15,35,0.92);
-      backdrop-filter: blur(16px);
-      border-bottom-color: rgba(255,255,255,0.08);
-    }
-    .nav-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 800;
-      font-size: 1.35rem;
-      color: #fff;
-    }
-    .nav-logo .logo-icon {
-      width: 36px; height: 36px;
-      background: linear-gradient(135deg, #0A66C2, #6C3FE8);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      color: #fff;
-    }
-    .nav-logo span.accent { color: #0A66C2; }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      list-style: none;
-      margin: 0 0 0 auto;
-      padding: 0;
-    }
-    .nav-links a {
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.2s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 2px;
-      background: #0A66C2;
-      transition: width 0.3s;
-    }
-    .nav-links a:hover, .nav-links a.active { color: #fff; }
-    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-    .nav-cta {
-      background: linear-gradient(135deg, #0A66C2, #6C3FE8);
-      color: #fff !important;
-      padding: 0.55rem 1.3rem;
-      border-radius: 50px;
-      font-weight: 600 !important;
-    }
-    .nav-cta::after { display: none !important; }
-    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
-    #menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    #mobile-menu {
-      display: none;
-      flex-direction: column;
-      background: rgba(15,15,35,0.97);
-      padding: 1rem 2rem 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-    #mobile-menu.open { display: flex; }
-    #mobile-menu a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      padding: 0.6rem 0;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    #mobile-menu a.active, #mobile-menu a:hover { color: #0A66C2; }
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      #menu-btn { display: block; }
-    }
-
-    /* ---------- Page Hero ---------- */
-    .page-hero {
-      background: linear-gradient(135deg, #0F0F23 0%, #1a1a3e 40%, #0d2240 100%);
-      padding: 6rem 2rem 4rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(108,63,232,0.25) 0%, transparent 70%);
-    }
-    .page-hero .hero-content { position: relative; z-index: 1; }
-    .page-hero h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 1rem;
-    }
-    .page-hero h1 span {
-      background: linear-gradient(135deg, #6C3FE8, #FF6B35);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .page-hero p {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.7);
-      max-width: 560px;
-      margin: 0 auto;
-    }
-    .breadcrumb {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.5);
-    }
-    .breadcrumb a { color: #0A66C2; text-decoration: none; }
-    .breadcrumb i { font-size: 0.7rem; }
+    /* Navbar & Page Hero — inherited from assets/css/style.css */
 
     /* ---------- General Section ---------- */
     .section-wrapper {
@@ -618,41 +461,58 @@
   <div id="scroll-progress"></div>
 
   <!-- ===================== NAVBAR ===================== -->
-  <header id="navbar">
-    <div class="nav-inner">
+  <header id="navbar" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
       <a href="index.html" class="nav-logo" aria-label="AcuraTech Global – Home">
         <img src="assets/images/logo.png" alt="AcuraTech Global" class="site-logo" width="165" height="44" />
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="blog.html" class="active">Blog</a></li>
-        <li></li>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="blog.html" class="nav-link active" aria-current="page">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
-      <button id="menu-btn" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
-    </div>
-    <nav id="mobile-menu">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="blog.html" class="active">Blog</a>
-      <a href="contact.html">Get a Quote</a>
+      <a href="contact.html" class="nav-pill-cta">Start a Conversation <span class="nav-arrow">↗</span></a>
+      <button id="menu-btn" class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
+    <div id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+      <ul role="list">
+        <li><a href="index.html" class="mobile-link">Home</a></li>
+        <li><a href="about.html" class="mobile-link">About</a></li>
+        <li><a href="services.html" class="mobile-link">Services</a></li>
+        <li><a href="portfolio.html" class="mobile-link">Portfolio</a></li>
+        <li><a href="blog.html" class="mobile-link active">Blog</a></li>
+        <li><a href="contact.html" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
   </header>
 
   <!-- ===================== PAGE HERO ===================== -->
   <section class="page-hero">
-    <div class="hero-content">
-      <div class="breadcrumb">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="index.html">Home</a>
-        <i class="fa-solid fa-chevron-right"></i>
+        <span>›</span>
         <span>Blog</span>
+      </nav>
+      <br />
+      <div class="page-hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        Engineering Insights &amp; Tech Trends
       </div>
-      <h1>Insights &amp; <span>Blog</span></h1>
-      <p>Stay updated with the latest in tech</p>
+      <h1>Insights &amp; <span class="gradient-text">Engineering Blog</span></h1>
+      <p class="page-hero-sub">
+        Deep dives into Applied AI, cloud architecture, mobile performance, and modern product engineering from the AcuraTech team.
+      </p>
+      <div class="page-hero-highlights">
+        <span class="page-hero-pill"><i class="fa-solid fa-brain"></i> Applied AI</span>
+        <span class="page-hero-pill"><i class="fa-solid fa-cloud"></i> Cloud &amp; DevOps</span>
+        <span class="page-hero-pill"><i class="fa-solid fa-mobile-screen"></i> Mobile Engineering</span>
+      </div>
     </div>
   </section>
 
