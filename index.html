@@ -402,7 +402,7 @@
                 <i class="fa-solid fa-headset"></i>
               </div>
               <div class="why-card-body">
-                <h4>24/7 Support & Maintenance</h4>
+                <h4>24/7 Support &amp; Maintenance</h4>
                 <p>SLA-backed uptime guarantees, round-the-clock incident response, and proactive product monitoring.</p>
               </div>
             </div>
@@ -431,60 +431,10 @@
               <span class="hub-pill pill-gold"><i class="fa-solid fa-star"></i> 4.9/5 Rated</span>
             </div>
 
-            <!-- Center Core Card with Technology Illustration -->
+            <!-- Center Core Card with 3D Crystal Engineering Render -->
             <div class="hub-core-display">
               <div class="hub-glow-effect" aria-hidden="true"></div>
-              
-              <svg viewBox="0 0 280 260" fill="none" xmlns="http://www.w3.org/2000/svg" class="hub-core-svg" aria-hidden="true">
-                <defs>
-                  <linearGradient id="hubMonitorGrad" x1="0" y1="0" x2="280" y2="260" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#0A66C2"/>
-                    <stop offset="100%" stop-color="#6C3FE8"/>
-                  </linearGradient>
-                  <linearGradient id="hubCodeGrad" x1="0" y1="0" x2="160" y2="0" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#22d3ee"/>
-                    <stop offset="100%" stop-color="#0A66C2"/>
-                  </linearGradient>
-                </defs>
-
-                <!-- Outer Tech Monitor Screen -->
-                <rect x="25" y="25" width="230" height="155" rx="14" fill="#0D1222" stroke="url(#hubMonitorGrad)" stroke-width="2.5"/>
-                <!-- Screen Glass Inner -->
-                <rect x="35" y="35" width="210" height="135" rx="8" fill="#080B14"/>
-
-                <!-- Header Bar of Monitor -->
-                <circle cx="50" cy="48" r="4" fill="#EF4444"/>
-                <circle cx="62" cy="48" r="4" fill="#F59E0B"/>
-                <circle cx="74" cy="48" r="4" fill="#10B981"/>
-                <text x="140" y="52" text-anchor="middle" fill="#64748B" font-family="Poppins, sans-serif" font-size="9" font-weight="600">acuratech-core.tsx</text>
-
-                <!-- Code Lines on Monitor -->
-                <rect x="50" y="68" width="60" height="6" rx="3" fill="#6C3FE8"/>
-                <rect x="116" y="68" width="85" height="6" rx="3" fill="#0A66C2"/>
-                
-                <rect x="62" y="82" width="110" height="6" rx="3" fill="url(#hubCodeGrad)"/>
-                <rect x="62" y="96" width="75" height="6" rx="3" fill="#FF6B35"/>
-                <rect x="143" y="96" width="65" height="6" rx="3" fill="#22d3ee"/>
-
-                <rect x="62" y="110" width="130" height="6" rx="3" fill="#10B981"/>
-                <rect x="50" y="124" width="45" height="6" rx="3" fill="#6C3FE8"/>
-
-                <!-- Monitor Stand Base -->
-                <path d="M125 180 L120 205 L160 205 L155 180 Z" fill="#1E293B"/>
-                <rect x="105" y="205" width="70" height="8" rx="4" fill="#0A66C2" opacity="0.8"/>
-
-                <!-- Center Floating Pulsing Shield Badge -->
-                <circle cx="140" cy="115" r="26" fill="#0A66C2" opacity="0.95"/>
-                <circle cx="140" cy="115" r="22" fill="#0D1222"/>
-                <path d="M140 102 L149 106 V116 C149 122 145 127 140 129 C135 127 131 122 131 116 V106 Z" fill="url(#hubMonitorGrad)"/>
-                <path d="M137 115 L139 117 L144 112" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-
-              <!-- Central Label -->
-              <div class="hub-center-badge">
-                <span class="hub-pulse-dot"></span>
-                <strong>AcuraTech Engineering Core</strong>
-              </div>
+              <img src="assets/images/why-us-core.jpg?v=2" alt="AcuraTech Engineering Partners Collaborating" class="hub-core-img" width="310" height="310" loading="lazy" />
             </div>
 
           </div>
@@ -498,7 +448,7 @@
                 <i class="fa-solid fa-bolt"></i>
               </div>
               <div class="why-card-body">
-                <h4>Agile & Transparent</h4>
+                <h4>Agile &amp; Transparent</h4>
                 <p>Bi-weekly sprint demos, live project dashboards, and constant Slack communication.</p>
               </div>
             </div>
@@ -506,7 +456,7 @@
             <!-- Card 5 -->
             <div class="why-circle-card card-mid-right">
               <div class="why-card-icon icon-emerald">
-                <i class="fa-solid fa-clock-check"></i>
+                <i class="fa-solid fa-calendar-check"></i>
               </div>
               <div class="why-card-body">
                 <h4>On-Time Delivery</h4>
@@ -772,113 +722,159 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════
-         TESTIMONIALS CAROUSEL
+         TESTIMONIALS MARQUEE (RIGHT-TO-LEFT)
     ═══════════════════════════════════════════════════ -->
-    <section id="testimonials" class="testimonials-section section-padding" aria-labelledby="testimonials-heading">
+    <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
       <div class="container">
-
-        <div class="section-header animate-on-scroll">
+        <div class="section-header animate-on-scroll" style="margin-bottom: 28px;">
           <span class="section-eyebrow">Client Stories</span>
           <h2 id="testimonials-heading" class="section-title">What Our <span class="gradient-text">Clients Say</span></h2>
-          <p class="section-subtitle">Don't just take our word for it. Here's what the businesses we've transformed have to say about working with AcuraTech Global.</p>
+          <p class="section-subtitle">Trusted by high-growth startups and global enterprises across 15+ countries.</p>
         </div>
+      </div>
 
-        <div class="testimonials-carousel" role="region" aria-label="Client testimonials carousel">
+      <div class="reviews-marquee-wrap" role="region" aria-label="Client testimonials stream">
+        <div class="reviews-marquee-track">
 
-          <div class="testimonial-track">
-
-            <article class="testimonial-card active" aria-label="Testimonial from Marcus Chen">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <span aria-hidden="true">★★★★★</span>
-              </div>
-              <blockquote class="testimonial-quote">
-                "AcuraTech Global transformed our entire digital infrastructure in just 8 months. Their team's technical expertise is unmatched — they delivered a system that handles 10x our previous traffic with zero downtime. Truly a world-class partner."
-              </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar" aria-hidden="true">
-                  <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="url(#av1Grad)"/><defs><linearGradient id="av1Grad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#0A66C2"/><stop offset="100%" stop-color="#6C3FE8"/></linearGradient></defs><circle cx="24" cy="20" r="8" fill="white" opacity="0.8"/><path d="M10 42 Q10 32 24 32 Q38 32 38 42" fill="white" opacity="0.8"/></svg>
-                </div>
-                <div class="author-info">
-                  <strong class="author-name">Marcus Chen</strong>
-                  <span class="author-title">CTO, NexaScale Technologies</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="testimonial-card" aria-label="Testimonial from Priya Sharma">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <span aria-hidden="true">★★★★★</span>
-              </div>
-              <blockquote class="testimonial-quote">
-                "We hired AcuraTech for a 3-month mobile app project and ended up with a long-term strategic partnership. Their proactive communication, clean code practices, and deep understanding of our users made all the difference. The app has 4.8★ on both stores."
-              </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar" aria-hidden="true">
-                  <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="url(#av2Grad)"/><defs><linearGradient id="av2Grad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#6C3FE8"/><stop offset="100%" stop-color="#FF6B35"/></linearGradient></defs><circle cx="24" cy="20" r="8" fill="white" opacity="0.8"/><path d="M10 42 Q10 32 24 32 Q38 32 38 42" fill="white" opacity="0.8"/></svg>
-                </div>
-                <div class="author-info">
-                  <strong class="author-name">Priya Sharma</strong>
-                  <span class="author-title">CEO, UrbanMed Health</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="testimonial-card" aria-label="Testimonial from David Okafor">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <span aria-hidden="true">★★★★★</span>
-              </div>
-              <blockquote class="testimonial-quote">
-                "The cybersecurity audit and cloud migration AcuraTech performed saved us from a potential catastrophe. They identified 23 critical vulnerabilities and rebuilt our infrastructure on AWS in 6 weeks. Our compliance score went from 62% to 99%. Absolutely outstanding."
-              </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar" aria-hidden="true">
-                  <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="url(#av3Grad)"/><defs><linearGradient id="av3Grad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#0A66C2"/></linearGradient></defs><circle cx="24" cy="20" r="8" fill="white" opacity="0.8"/><path d="M10 42 Q10 32 24 32 Q38 32 38 42" fill="white" opacity="0.8"/></svg>
-                </div>
-                <div class="author-info">
-                  <strong class="author-name">David Okafor</strong>
-                  <span class="author-title">Director of IT, PanAfrica Finance Group</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="testimonial-card" aria-label="Testimonial from Sophie Laurent">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">
-                <span aria-hidden="true">★★★★★</span>
-              </div>
-              <blockquote class="testimonial-quote">
-                "Working with AcuraTech on our e-commerce redesign was an exceptional experience. They reduced our page load time by 68%, which directly translated to a 34% increase in conversions. Their UI/UX team delivered a product that feels both beautiful and effortlessly intuitive."
-              </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar" aria-hidden="true">
-                  <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="url(#av4Grad)"/><defs><linearGradient id="av4Grad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#6C3FE8"/></linearGradient></defs><circle cx="24" cy="20" r="8" fill="white" opacity="0.8"/><path d="M10 42 Q10 32 24 32 Q38 32 38 42" fill="white" opacity="0.8"/></svg>
-                </div>
-                <div class="author-info">
-                  <strong class="author-name">Sophie Laurent</strong>
-                  <span class="author-title">VP Digital, LuxBrands Europe</span>
-                </div>
-              </div>
-            </article>
-
-          </div><!-- .testimonial-track -->
-
-          <!-- Carousel Controls -->
-          <div class="carousel-controls">
-            <button class="prev-btn" aria-label="Previous testimonial">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18 L9 12 L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="carousel-dots" role="tablist" aria-label="Testimonial indicators">
-              <button class="dot active" role="tab" aria-selected="true" aria-label="Testimonial 1"></button>
-              <button class="dot" role="tab" aria-selected="false" aria-label="Testimonial 2"></button>
-              <button class="dot" role="tab" aria-selected="false" aria-label="Testimonial 3"></button>
-              <button class="dot" role="tab" aria-selected="false" aria-label="Testimonial 4"></button>
+          <!-- Set 1 -->
+          <article class="review-marquee-card" aria-label="Testimonial from Marcus Chen">
+            <div class="review-card-top">
+              <span class="review-stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="review-verified"><i class="fa-solid fa-circle-check"></i> Verified Client</span>
             </div>
-            <button class="next-btn" aria-label="Next testimonial">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18 L15 12 L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-          </div>
+            <blockquote class="review-quote">
+              "AcuraTech Global transformed our entire digital infrastructure in 8 months — delivering a platform handling 10x traffic with zero downtime."
+            </blockquote>
+            <div class="review-author">
+              <span class="review-avatar av-blue" aria-hidden="true">MC</span>
+              <div class="author-info">
+                <strong class="author-name">Marcus Chen</strong>
+                <span class="author-title">CTO, NexaScale Technologies</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-marquee-card" aria-label="Testimonial from Priya Sharma">
+            <div class="review-card-top">
+              <span class="review-stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="review-verified"><i class="fa-solid fa-circle-check"></i> 4.8★ App Stores</span>
+            </div>
+            <blockquote class="review-quote">
+              "We hired AcuraTech for a 3-month mobile app project and gained a long-term strategic partner. Clean code, proactive comms, and 4.8★ ratings."
+            </blockquote>
+            <div class="review-author">
+              <span class="review-avatar av-purple" aria-hidden="true">PS</span>
+              <div class="author-info">
+                <strong class="author-name">Priya Sharma</strong>
+                <span class="author-title">CEO, UrbanMed Health</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-marquee-card" aria-label="Testimonial from David Okafor">
+            <div class="review-card-top">
+              <span class="review-stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="review-verified"><i class="fa-solid fa-circle-check"></i> AWS Migration</span>
+            </div>
+            <blockquote class="review-quote">
+              "Their security audit and AWS migration identified 23 critical vulnerabilities and lifted our compliance score from 62% to 99% in 6 weeks."
+            </blockquote>
+            <div class="review-author">
+              <span class="review-avatar av-orange" aria-hidden="true">DO</span>
+              <div class="author-info">
+                <strong class="author-name">David Okafor</strong>
+                <span class="author-title">Director of IT, PanAfrica Finance</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-marquee-card" aria-label="Testimonial from Sophie Laurent">
+            <div class="review-card-top">
+              <span class="review-stars" aria-label="5 out of 5 stars">★★★★★</span>
+              <span class="review-verified"><i class="fa-solid fa-circle-check"></i> +34% Conversion</span>
+            </div>
+            <blockquote class="review-quote">
+              "Our e-commerce redesign cut page load time by 68% and boosted conversions by 34%. Effortlessly intuitive UI backed by rock-solid engineering."
+            </blockquote>
+            <div class="review-author">
+              <span class="review-avatar av-cyan" aria-hidden="true">SL</span>
+              <div class="author-info">
+                <strong class="author-name">Sophie Laurent</strong>
+                <span class="author-title">VP Digital, LuxBrands Europe</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Set 2 (Seamless Infinite Loop Duplicate) -->
+          <article class="review-marquee-card" aria-hidden="true">
+            <div class="review-card-top">
+              <span class="review-stars">★★★★★</span>
+              <span class="review-verified"><i class="fa-solid fa-circle-check"></i> Verified Client</span>
+            </div>
+            <blockquote class="review-quote">
+              "AcuraTech Global transformed our entire digital infrastructure in 8 months — delivering a platform handling 10x traffic with zero downtime."
+            </blockquote>
+            <div class="review-author">
+              <span class="review-avatar av-blue">MC</span>
+              <div class="author-info">
+                <strong class="author-name">Marcus Chen</strong>
+                <span class="author-title">CTO, NexaScale Technologies</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-marquee-card" aria-hidden="true">
+            <div class="review-card-top">
+              <span class="review-stars">★★★★★</span>
+              <span class="review-verified"><i class="fa-solid fa-circle-check"></i> 4.8★ App Stores</span>
+            </div>
+            <blockquote class="review-quote">
+              "We hired AcuraTech for a 3-month mobile app project and gained a long-term strategic partner. Clean code, proactive comms, and 4.8★ ratings."
+            </blockquote>
+            <div class="review-author">
+              <span class="review-avatar av-purple">PS</span>
+              <div class="author-info">
+                <strong class="author-name">Priya Sharma</strong>
+                <span class="author-title">CEO, UrbanMed Health</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-marquee-card" aria-hidden="true">
+            <div class="review-card-top">
+              <span class="review-stars">★★★★★</span>
+              <span class="review-verified"><i class="fa-solid fa-circle-check"></i> AWS Migration</span>
+            </div>
+            <blockquote class="review-quote">
+              "Their security audit and AWS migration identified 23 critical vulnerabilities and lifted our compliance score from 62% to 99% in 6 weeks."
+            </blockquote>
+            <div class="review-author">
+              <span class="review-avatar av-orange">DO</span>
+              <div class="author-info">
+                <strong class="author-name">David Okafor</strong>
+                <span class="author-title">Director of IT, PanAfrica Finance</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-marquee-card" aria-hidden="true">
+            <div class="review-card-top">
+              <span class="review-stars">★★★★★</span>
+              <span class="review-verified"><i class="fa-solid fa-circle-check"></i> +34% Conversion</span>
+            </div>
+            <blockquote class="review-quote">
+              "Our e-commerce redesign cut page load time by 68% and boosted conversions by 34%. Effortlessly intuitive UI backed by rock-solid engineering."
+            </blockquote>
+            <div class="review-author">
+              <span class="review-avatar av-cyan">SL</span>
+              <div class="author-info">
+                <strong class="author-name">Sophie Laurent</strong>
+                <span class="author-title">VP Digital, LuxBrands Europe</span>
+              </div>
+            </div>
+          </article>
 
         </div>
-
       </div>
     </section>
 
@@ -1000,7 +996,7 @@
             <a href="index.html" class="footer-logo" aria-label="AcuraTech Global – Home">
         <img src="assets/images/logo.png" alt="AcuraTech Global" class="footer-logo-img" width="175" height="46" />
       </a>
-            <p class="footer-about">Empowering businesses worldwide with innovative technology solutions since 2014. We are your trusted partner for digital transformation and software excellence.</p>
+            <p class="footer-about">Empowering businesses worldwide with innovative technology solutions since 2018. We are your trusted partner for digital transformation and software excellence.</p>
             <div class="footer-socials" aria-label="Social media links">
               <a href="https://in.linkedin.com/company/acuratech-global" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
               <a href="https://www.facebook.com/acuratechglobal" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
@@ -1080,7 +1076,7 @@
       <div class="container footer-bottom-inner">
         <p class="footer-copy">
           &copy; <span id="footer-year">2024</span> AcuraTech Global. All rights reserved.
-          <span class="footer-copy-made">Crafted with <span aria-label="love">❤️</span> in India & Global.</span>
+         
         </p>
         <nav class="footer-legal" aria-label="Legal links">
           <a href="privacy.html" class="legal-link">Privacy Policy</a>

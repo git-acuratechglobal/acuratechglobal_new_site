@@ -23,47 +23,7 @@
     /* Container */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* Page Hero */
-    .page-hero {
-      background: linear-gradient(135deg, #0F0F23 0%, #1a1a3e 60%, #0A66C2 100%);
-      padding: 120px 0 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 80% 30%, rgba(255,107,53,0.2) 0%, transparent 60%);
-    }
-    .page-hero h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 800;
-      color: #fff;
-      position: relative;
-    }
-    .page-hero p {
-      font-family: 'Inter', sans-serif;
-      color: rgba(255,255,255,0.7);
-      max-width: 520px;
-      margin: 16px auto 0;
-      line-height: 1.8;
-      position: relative;
-    }
-    .breadcrumb {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.65);
-      position: relative;
-    }
-    .breadcrumb a { color: #60A5FA; text-decoration: none; }
-    .breadcrumb span { color: rgba(255,255,255,0.4); }
+    /* Page Hero — inherited from assets/css/style.css */
 
     /* Section Header */
     .section-header { text-align: center; margin-bottom: 56px; }
@@ -115,15 +75,16 @@
     .info-value a { color: #0A66C2; text-decoration: none; }
 
     /* Main Contact Section */
-    .contact-main { padding: 80px 0; background: #F8FAFF; }
-    .contact-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 48px; align-items: start; }
+    .contact-main { padding: 72px 0 90px; background: #ffffff; }
+    .contact-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 40px; align-items: start; }
 
     /* Form */
     .contact-form-wrap {
-      background: #fff;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
       border-radius: 20px;
-      padding: 48px 44px;
-      box-shadow: 0 4px 32px rgba(10,102,194,0.08);
+      padding: 44px 40px;
+      box-shadow: 0 8px 32px rgba(15, 23, 42, 0.05);
     }
     .form-heading {
       font-family: 'Poppins', sans-serif;
@@ -204,36 +165,43 @@
     .form-success p { font-family: 'Inter', sans-serif; color: #047857; font-size: 0.9rem; }
 
     /* Sidebar */
-    .contact-sidebar { display: flex; flex-direction: column; gap: 24px; }
+    .contact-sidebar { display: flex; flex-direction: column; gap: 20px; }
     .sidebar-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 4px 20px rgba(10,102,194,0.07);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
     }
     .sidebar-card h4 {
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
-      font-size: 1rem;
-      color: #1E293B;
+      font-size: 1.02rem;
+      color: #0F172A;
       margin-bottom: 16px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+    }
+    .sidebar-card h4 i {
+      color: #2752ff;
+      font-size: 1.05rem;
     }
     .sidebar-info-list { list-style: none; padding: 0; margin: 0; }
     .sidebar-info-list li {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 12px;
       font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: #475569;
-      margin-bottom: 10px;
-      line-height: 1.5;
+      margin-bottom: 12px;
+      line-height: 1.55;
     }
-    .sidebar-info-list li i { color: #0A66C2; margin-top: 2px; flex-shrink: 0; }
-    .sidebar-info-list a { color: #0A66C2; text-decoration: none; }
+    .sidebar-info-list li:last-child { margin-bottom: 0; }
+    .sidebar-info-list li i { color: #2752ff; margin-top: 3px; flex-shrink: 0; width: 16px; text-align: center; }
+    .sidebar-info-list a { color: #2752ff; font-weight: 500; text-decoration: none; }
+    .sidebar-info-list a:hover { text-decoration: underline; }
 
     /* Social Links */
     .social-links { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -378,8 +346,10 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
-      <a href="index.html#portfolio">Portfolio</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
       <a href="contact.html" class="active">Contact</a>
+      <a href="#contact-form" class="nav-pill-cta">Start a Conversation <span class="nav-arrow">↗</span></a>
     </nav>
 
     <div class="nav-actions">
@@ -393,7 +363,8 @@
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="index.html#portfolio">Portfolio</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
     <a href="contact.html" class="active">Contact</a>
     </div>
 </header>
@@ -403,39 +374,24 @@
   <!-- ═══ PAGE HERO ═══ -->
   <section class="page-hero">
     <div class="container">
-      <h1>Contact Us</h1>
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="index.html">Home</a>
         <span>›</span>
         <span>Contact</span>
       </nav>
-      <p>Have a project in mind? We'd love to hear from you. Reach out and let's build something amazing together.</p>
-    </div>
-  </section>
-
-  <!-- ═══ INFO CARDS ═══ -->
-  <section class="info-cards-section">
-    <div class="container">
-      <div class="info-cards-grid stagger-children">
-
-        <div class="info-card animate-on-scroll">
-          <div class="info-icon" style="background:rgba(10,102,194,0.1);">📍</div>
-          <div class="info-label">Our Office</div>
-          <div class="info-value">STPI Incubation Building C-184<br/>Phase 8A, Mohali, India</div>
-        </div>
-
-        <div class="info-card animate-on-scroll">
-          <div class="info-icon" style="background:rgba(16,185,129,0.1);">📞</div>
-          <div class="info-label">Call Us</div>
-          <div class="info-value"><a href="tel:+918427777775">+91 842 777 7775</a></div>
-        </div>
-
-        <div class="info-card animate-on-scroll">
-          <div class="info-icon" style="background:rgba(255,107,53,0.1);">✉️</div>
-          <div class="info-label">Email Us</div>
-          <div class="info-value"><a href="mailto:info@acuratechglobal.com">info@acuratechglobal.com</a></div>
-        </div>
-
+      <br />
+      <div class="page-hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        24-Hour Response &bull; Mutual NDA Guaranteed
+      </div>
+      <h1>Let's Build Something <span class="gradient-text">Extraordinary</span></h1>
+      <p class="page-hero-sub">
+        Have a project in mind? Share your goals and our principal engineering leads will scope, architect, and respond within one business day.
+      </p>
+      <div class="page-hero-highlights">
+        <span class="page-hero-pill"><i class="fa-solid fa-lock"></i> Mutual NDA Upfront</span>
+        <span class="page-hero-pill"><i class="fa-solid fa-bolt"></i> 24h Engineering Scoping</span>
+        <span class="page-hero-pill"><i class="fa-solid fa-users-gear"></i> Dedicated Product Squads</span>
       </div>
     </div>
   </section>
@@ -528,7 +484,7 @@
 
           <!-- Company Info -->
           <div class="sidebar-card animate-on-scroll">
-            <h4><span>🏢</span> Company Information</h4>
+            <h4><i class="fa-solid fa-building"></i> Company Information</h4>
             <ul class="sidebar-info-list">
               <li><i class="fas fa-map-marker-alt"></i> STPI Incubation Building C-184, Phase 8A, Mohali, India</li>
               <li><i class="fas fa-phone"></i> <a href="tel:+918427777775">+91 842 777 7775</a></li>
@@ -537,55 +493,31 @@
             </ul>
           </div>
 
-          <!-- Map Placeholder (SVG) -->
+          <!-- Real Interactive Google Map -->
           <div class="sidebar-card animate-on-scroll" style="padding:0; overflow:hidden;">
-            <div class="map-wrap">
-              <svg width="100%" viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="World map showing office location">
-                <!-- Background -->
-                <rect width="400" height="220" fill="#EEF4FF"/>
-                <!-- Grid lines -->
-                <line x1="0" y1="55" x2="400" y2="55" stroke="#D1D5DB" stroke-width="0.5" stroke-dasharray="3 3"/>
-                <line x1="0" y1="110" x2="400" y2="110" stroke="#D1D5DB" stroke-width="0.5" stroke-dasharray="3 3"/>
-                <line x1="0" y1="165" x2="400" y2="165" stroke="#D1D5DB" stroke-width="0.5" stroke-dasharray="3 3"/>
-                <line x1="100" y1="0" x2="100" y2="220" stroke="#D1D5DB" stroke-width="0.5" stroke-dasharray="3 3"/>
-                <line x1="200" y1="0" x2="200" y2="220" stroke="#D1D5DB" stroke-width="0.5" stroke-dasharray="3 3"/>
-                <line x1="300" y1="0" x2="300" y2="220" stroke="#D1D5DB" stroke-width="0.5" stroke-dasharray="3 3"/>
-                <!-- Continents (simplified shapes) -->
-                <!-- North America -->
-                <path d="M30 40 L80 35 L110 55 L100 90 L85 110 L60 115 L40 100 L25 75 Z" fill="#CBD5E1" opacity="0.8"/>
-                <!-- South America -->
-                <path d="M70 125 L100 120 L115 140 L110 175 L90 190 L70 185 L60 160 L65 140 Z" fill="#CBD5E1" opacity="0.8"/>
-                <!-- Europe -->
-                <path d="M165 30 L200 28 L215 50 L205 75 L180 80 L160 65 L155 45 Z" fill="#CBD5E1" opacity="0.8"/>
-                <!-- Africa -->
-                <path d="M165 90 L200 88 L215 110 L210 155 L190 175 L170 170 L155 150 L158 115 Z" fill="#CBD5E1" opacity="0.8"/>
-                <!-- Asia -->
-                <path d="M218 25 L310 20 L340 45 L355 80 L340 110 L300 120 L270 110 L240 100 L220 80 L215 55 Z" fill="#CBD5E1" opacity="0.8"/>
-                <!-- Australia -->
-                <path d="M305 140 L355 138 L370 160 L360 185 L330 190 L305 175 L298 155 Z" fill="#CBD5E1" opacity="0.8"/>
-                <!-- Location pin for India & Global -->
-                <circle cx="58" cy="80" r="10" fill="#0A66C2" opacity="0.2"/>
-                <circle cx="58" cy="80" r="6" fill="#0A66C2" opacity="0.5"/>
-                <circle cx="58" cy="80" r="3" fill="#0A66C2"/>
-                <!-- Pin spike -->
-                <path d="M58 83 L58 94" stroke="#0A66C2" stroke-width="2" stroke-linecap="round"/>
-                <!-- Tooltip -->
-                <rect x="30" y="58" width="90" height="20" rx="5" fill="#0A66C2"/>
-                <text x="75" y="72" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="9" font-weight="600">Mohali / Chandigarh</text>
-                <!-- Triangle pointer -->
-                <polygon points="55,78 58,84 61,78" fill="#0A66C2"/>
-                <!-- Pulse ring animation -->
-                <circle cx="58" cy="80" r="14" fill="none" stroke="#0A66C2" stroke-width="1.5" opacity="0.4">
-                  <animate attributeName="r" from="6" to="18" dur="2s" repeatCount="indefinite"/>
-                  <animate attributeName="opacity" from="0.6" to="0" dur="2s" repeatCount="indefinite"/>
-                </circle>
-              </svg>
+            <div class="map-wrap" style="position:relative; width:100%; height:240px; background:#f1f5f9;">
+              <iframe
+                title="AcuraTech Global Office Location — STPI Incubation Building C-184, Phase 8A, Mohali"
+                src="https://maps.google.com/maps?q=STPI%20Incubation%20Building%20C-184,%20Phase%208A,%20Mohali,%20India&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="240"
+                style="border:0; display:block;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 18px; background:#f8fafc; border-top:1px solid #e2e8f0; font-size:0.84rem;">
+              <span style="color:#475569; font-weight:500;"><i class="fa-solid fa-location-dot" style="color:#2752ff; margin-right:6px;"></i>STPI Mohali, Punjab</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=STPI+Incubation+Building+C-184+Phase+8A+Mohali+India" target="_blank" rel="noopener noreferrer" style="color:#2752ff; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:4px;">
+                Get Directions <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+              </a>
             </div>
           </div>
 
           <!-- Social Links -->
           <div class="sidebar-card animate-on-scroll">
-            <h4><span>📲</span> Follow Us</h4>
+            <h4><i class="fa-solid fa-share-nodes"></i> Follow Us</h4>
             <div class="social-links">
               <a href="https://in.linkedin.com/company/acuratech-global" class="social-link sl-li" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
               <a href="https://www.facebook.com/acuratechglobal" class="social-link sl-fb" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
@@ -595,7 +527,7 @@
 
           <!-- Office Hours -->
           <div class="sidebar-card animate-on-scroll">
-            <h4><span>🕐</span> Office Hours</h4>
+            <h4><i class="fa-solid fa-clock"></i> Office Hours</h4>
             <ul class="hours-list">
               <li><span class="hours-day">Monday – Friday</span><span class="hours-open">9:00 AM – 6:00 PM PST</span></li>
               <li><span class="hours-day">Saturday</span><span style="color:#F59E0B; font-weight:600;">10:00 AM – 2:00 PM PST</span></li>
